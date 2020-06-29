@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## WordPress Starter Theme
 
 This is a starter theme for all new WordPress sites.
