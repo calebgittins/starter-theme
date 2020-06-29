@@ -8,3 +8,4 @@ This is a starter theme for all new WordPress sites. Test.
 2. Update details in gulfile.js
 3. Open terminal and run *gulp*
 4. Update theme name in style.scss
+5. Start coding
