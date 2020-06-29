@@ -1,6 +1,6 @@
 ## WordPress Starter Theme
 
-This is a starter theme for all new WordPress sites. Test. Test 2.
+This is a starter theme for all new WordPress sites. 
 
 ## Usage
 
@@ -8,4 +8,4 @@ This is a starter theme for all new WordPress sites. Test. Test 2.
 2. Update details in gulfile.js
 3. Open terminal and run *gulp*
 4. Update theme name in style.scss
-5. Start coding
+5. Start coding!
