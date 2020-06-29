@@ -1,0 +1,31 @@
+.bg--primary{background-color:#0047ab}
+.color--primary{color:#0047ab}
+.border--primary{border-color:#0047ab}
+.bg--secondary{background-color:#046307}
+.color--secondary{color:#046307}
+.border--secondary{border-color:#046307}
+.bg--dark{background-color:#111}
+.color--dark{color:#111}
+.border--dark{border-color:#111}
+.bg--light{background-color:#ccc}
+.color--light{color:#ccc}
+.border--light{border-color:#ccc}
+.bg--error{background-color:#df0000}
+.color--error{color:#df0000}
+.border--error{border-color:#df0000}
+.bg--default{background-color:#313131}
+.color--default{color:#313131}
+.border--default{border-color:#313131}
+.bg--white{background-color:#fff}
+.color--white{color:#fff}
+.border--white{border-color:#fff}
+.login{color:#313131}
+.login h1 a{background-image:url(../../images/admin/logo.png) !important;background-size:124px !important;background-position:center top;background-repeat:no-repeat;margin:0 auto 24px;padding:0;width:124px;height:124px;text-indent:-9999px;outline:0;display:block}
+.login label{color:#313131}
+.login input[type=checkbox]{box-shadow:none;border-color:#0047ab}
+.login input[type=checkbox]:checked:before{color:#0047ab}
+.login .button-primary{background:#0047ab;border:0;box-shadow:none;color:#fff;text-decoration:none;text-shadow:none;-webkit-transition:all .24s ease-in-out;transition:all .24s ease-in-out}
+.login .button-primary:active,.login .button-primary:hover{background-color:#046307;border:0;box-shadow:none;text-shadow:none}
+.login #backtoblog a,.login #nav a{color:#0047ab}
+.login #backtoblog a:hover,.login #nav a:hover{color:#046307}
+.login #login_error,.login .message{color:#313131;border-left-color:#0047ab}

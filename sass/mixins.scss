@@ -1,0 +1,194 @@
+/*------------------------------------*\
+    $COVER
+\*------------------------------------*/
+
+@mixin cover($zindex) {
+    position: absolute;
+    z-index: $zindex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/*------------------------------------*\
+    $CLEARFIX
+\*------------------------------------*/
+
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+
+/*------------------------------------*\
+    $MEDIA QUERIES
+\*------------------------------------*/
+
+$small-phone-width: 399px;
+
+/* Up to 400px - SMALL PHONE */
+
+$phone-width: 767px;
+
+/* Up to 768px - LARGER PHONE */
+
+$tablet-width: 1199px;
+
+/* Up to 1200px - TABLET */
+
+$laptop-width: 1919px;
+
+/* Up to 1920px - LAPTOP */
+
+@mixin small-phone {
+    @media handheld,
+    only screen and (max-width: #{$small-phone-width}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media handheld,
+    only screen and (max-width: #{$phone-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media handheld,
+    only screen and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media handheld,
+    only screen and (max-width: #{$laptop-width}) {
+        @content;
+    }
+}
+
+
+/*------------------------------------*\
+    $CUSTOM MEDIA QUERIES
+\*------------------------------------*/
+
+
+/* MAX WIDTH */
+
+@mixin max-width($width) {
+    @media handheld,
+    only screen and (max-width: #{$width}) {
+        @content;
+    }
+}
+
+
+/* MIN WIDTH */
+
+@mixin min-width($width) {
+    @media handheld,
+    only screen and (min-width: #{$width}) {
+        @content;
+    }
+}
+
+
+/*------------------------------------*\
+    $WRAP LINKS
+\*------------------------------------*/
+
+@mixin wrap-link {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+
+/*------------------------------------*\
+    $PLACEHOLDER
+\*------------------------------------*/
+
+@mixin placeholder {
+     ::-webkit-input-placeholder {
+        @content
+    }
+     :-moz-placeholder {
+        @content
+    }
+     ::-moz-placeholder {
+        @content
+    }
+     :-ms-input-placeholder {
+        @content
+    }
+     ::-ms-input-placeholder {
+        @content
+    }
+     :placeholder {
+        @content
+    }
+    .placeholdersjs {
+        @content
+    }
+}
+
+
+/*------------------------------------*\
+    $GRID SPACING
+\*------------------------------------*/
+
+@mixin grid-spacing($spacing-left, $spacing-bottom: 0) {
+    .grid {
+        margin-left: -$spacing-left;
+    }
+    .grid__item {
+        padding-left: $spacing-left;
+        padding-bottom: $spacing-bottom;
+    }
+}
+
+
+/*------------------------------------*\
+    $ASPECT RATIO
+\*------------------------------------*/
+
+@mixin aspect-ratio($percent) {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: $percent;
+}
+
+
+/*------------------------------------*\
+    $VISUALLY HIDDEN BUT ACCESSIBLE
+\*------------------------------------*/
+
+@mixin visually-hidden {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}

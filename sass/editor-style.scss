@@ -1,0 +1,278 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+html .mceContentBody {
+    max-width: 640px;
+    margin: 1em;
+}
+
+body {
+    background: #fff;
+    font: normal 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: $color-default;
+}
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+
+p,
+ul,
+ol,
+blockquote,
+table,
+hr,
+iframe,
+.grid,
+.cta,
+.message,
+.button,
+.banner,
+.content,
+.has-mb {
+    margin-bottom: 1.618em;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: $color-default;
+}
+
+h1,
+.alpha {
+    font-size: 2.125em;
+    line-height: 1.235em;
+    margin-bottom: 0.618em;
+}
+
+h2,
+.beta {
+    font-size: 1.438em;
+    line-height: 1.348em;
+    margin-bottom: 0.913em;
+}
+
+h3,
+.gamma {
+    font-size: 1.188em;
+    line-height: 1.421em;
+    margin-bottom: 1.105em;
+}
+
+h4,
+.delta {
+    font-size: 1.125em;
+    line-height: 1.444em;
+    margin-bottom: 1.167em;
+}
+
+h5,
+.epsilon {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1.313em;
+}
+
+h6,
+.zeta {
+    font-size: 0.875em;
+    line-height: 1.571em;
+    margin-bottom: 1.5em;
+}
+
+small,
+.small {
+    font-size: 0.875em;
+    line-height: 1.4em;
+}
+
+hr {
+    border: solid #ddd;
+    border-width: 1px 0 0 0;
+    clear: both;
+    width: 100%;
+    margin: 2.5em auto;
+}
+
+a:link,
+a:visited {
+    text-decoration: underline;
+    font-weight: bold;
+    transition: $transition;
+}
+
+a:hover {
+    text-decoration: underline;
+    outline: none;
+}
+
+a.button {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 0.75em 1.618em;
+    background-color: $color-default;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #131313;
+}
+
+
+/*------------------------------------*\
+    $CONTENT TABLES
+\*------------------------------------*/
+
+table {
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 0.625em;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-weight: bold;
+    text-align: left;
+}
+
+
+/*------------------------------------*\
+    $CONTENT LISTS
+\*------------------------------------*/
+
+li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.875em;
+}
+
+li>ul,
+li>ol {
+    margin-top: 0.625em;
+    margin-bottom: 0;
+}
+
+
+/*------------------------------------*\
+    $UNORDERED LIST
+\*------------------------------------*/
+
+ul li:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: $color-default;
+    border-radius: 100px;
+}
+
+
+/*------------------------------------*\
+    $NUMBERED LIST
+\*------------------------------------*/
+
+ol {
+    list-style: none;
+    margin-left: 0;
+    counter-reset: number-counter;
+}
+
+ol li {
+    margin-bottom: 0.875em;
+    padding-left: 2em;
+    position: relative;
+}
+
+ol li:before {
+    content: counter(number-counter);
+    counter-increment: number-counter;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    background-color: $color-default;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+
+.alignright,
+a.alignright {
+    float: right;
+    margin: 0 0 1.618em 1.618em;
+}
+
+.alignleft,
+a.alignleft {
+    float: left;
+    margin: 0 1.618em 1.618em 0;
+}
+
+.aligncenter,
+a .aligncenter {
+    display: block;
+    margin: 0 auto 1.618em auto;
+}
+
+.alignnone,
+a .alignnone {
+    display: block;
+    margin-bottom: 1.618em;
+}
+
+img.no-image-border {
+    padding: 0;
+    border: none;
+}
+
+.wp-caption {
+    margin-bottom: 1.618em;
+}
+
+.wp-caption img {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 0.875em;
+    line-height: 1.4em;
+    margin-bottom: 0;
+    padding: 0.625em 0;
+    font-style: italic;
+    border-bottom: 1px solid #ddd;
+}

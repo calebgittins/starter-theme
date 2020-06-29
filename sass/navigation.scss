@@ -1,0 +1,166 @@
+/*------------------------------------*\
+    $NAV PRIMARY
+\*------------------------------------*/
+
+.nav--primary {
+    font-size: 16px;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.nav--primary>li+li {
+    margin-left: 1em;
+}
+
+.nav--primary a {
+    position: relative;
+    color: $color-default;
+}
+
+
+/* DROPDOWN */
+
+.nav--primary .sub-menu {
+    display: none;
+    position: absolute;
+    left: 18px;
+    top: 100%;
+    background-color: $color-primary;
+    width: 225px;
+    padding: 8px 18px;
+    z-index: 9999;
+}
+
+.nav--primary .sub-menu li {
+    float: none;
+}
+
+.nav--primary .sub-menu a {
+    font-size: 17px;
+    line-height: 20px;
+    padding: 10px 0;
+    font-weight: 400;
+    color: #fff;
+}
+
+.nav--primary .sub-menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* HOVER */
+
+.nav--primary li:hover>a {
+    color: $color-secondary;
+}
+
+
+/* CURRENT */
+
+.nav--primary>.current-menu-item>a,
+.nav--primary>.current-menu-ancestor>a {
+    color: $color-primary;
+}
+
+
+/*------------------------------------*\
+    $HAMBURGER
+\*------------------------------------*/
+
+.hamburger {
+    position: absolute;
+    z-index: 800;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.hamburger__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: $color-primary;
+    height: 6px;
+    transition: $transition;
+}
+
+.hamburger__line--top {
+    top: 3px;
+}
+
+.hamburger__line--middle {
+    top: 50%;
+    left: 50%;
+    margin-top: -3px;
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+.hamburger__line--bottom {
+    bottom: 3px;
+}
+
+
+/* ACTIVE */
+
+.hamburger--active .hamburger__line--top {
+    top: 50%;
+    margin-top: -3px;
+    transform: rotate(45deg);
+}
+
+.hamburger--active .hamburger__line--middle {
+    width: 0;
+}
+
+.hamburger--active .hamburger__line--bottom {
+    bottom: 50%;
+    margin-bottom: -3px;
+    transform: rotate(-45deg);
+}
+
+@include min-width(1200px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+
+/*------------------------------------*\
+    $OFFSCREEN
+\*------------------------------------*/
+
+.offscreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    z-index: 880;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: $transition-slow;
+    width: 100%;
+    visibility: hidden;
+    transform: translateX(100%);
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+.offscreen--active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.offscreen__body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 80px 60px;
+}

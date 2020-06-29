@@ -1,0 +1,192 @@
+/*------------------------------------*\
+    $BODY
+\*------------------------------------*/
+
+body {
+    background-color: $color-white;
+}
+
+.body--offscreen-active {
+	overflow: hidden;
+}
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a {
+
+	&, 
+	&:visited {
+	    text-decoration: none;
+	    font-weight: 400;
+	    color: $color-primary;
+		transition: $transition;
+	}
+
+	&:hover {
+		text-decoration: none;
+		outline: none;
+		color: $color-secondary;
+	}
+
+	&:focus, 
+	&:active { 
+		outline: none; 
+	}
+
+}
+
+a.link--cover {
+	@include cover(12);
+}
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+%button {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+    line-height: 1em;
+    color: $color-white;
+    background-color: $color-primary;
+    text-transform: uppercase;
+    padding: 0.8em 1.24em;
+    font-weight: 700;
+
+    &:hover {
+    	text-decoration: none; 
+    	background-color: $color-secondary;
+    }
+}
+
+a.button, 
+form button, 
+input[type="submit"],
+input[type="button"] {
+	@extend %button;
+}
+
+a.button--alt {
+	background-color: $color-secondary;
+	
+	&:hover {
+		background-color: $color-primary;
+	}
+}
+
+a.button--light {
+	background-color: $color-white;
+	color: $color-primary;
+
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+	}
+}
+
+/*------------------------------------*\
+    $OTHER ELEMENTS
+\*------------------------------------*/
+
+hr {
+	border: solid $color-light;
+    border-width: 1px 0 0 0;
+    clear: both;
+	width: 100%;
+	margin: 48px auto;
+}
+
+img, 
+iframe { 
+	vertical-align: top; 
+	max-width: 100%;
+}
+
+::selection {
+    background: $color-primary;
+    color: $color-white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+    $LAZY LOADING
+\*------------------------------------*/
+
+.b-lazy {
+	opacity: 0;
+	transition: $transition-slow;
+}
+
+.b-loaded {
+	opacity: 1;
+}
+
+/*------------------------------------*\
+	$WRAP
+\*------------------------------------*/
+
+.wrap {
+	margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;    
+}
+
+.wrap--fixed {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+}
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+
+.header { 
+	position: relative;
+	z-index: 1200;
+}
+
+.header__logo {
+	position: relative;
+}
+
+@include tablet {
+	
+	.header__nav {
+		display: none;
+	}
+
+}
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+
+.footer {
+	padding: 48px 0;
+	font-size: 14px;
+	line-height: 1em;
+}
+
+/*------------------------------------*\
+    $POPUP
+\*------------------------------------*/
+
+.popup {
+	position: relative;
+	width: 80%;
+	max-width: 1200px;
+	margin: 100px auto;
+	background-color: $color-white;
+	padding: 40px;
+}
+
+
+
+

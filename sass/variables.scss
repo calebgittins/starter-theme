@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+
+/* UI COLOURS */
+
+$color-default: #313131;
+$color-dark   : #111;
+$color-light  : #ccc;
+
+/* SEMANTIC COLOURS */
+
+$color-error: #df0000;
+$color-white: #ffffff;
+
+/* LAYOUT COLOURS */
+
+$color-primary  : #0047AB;
+$color-secondary: #046307;
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+
+$font-body   : 'Open Sans', sans-serif;
+$font-heading: 'Open Sans', sans-serif;
+$font-icon   : 'Font Awesome 5 Pro';
+
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+$transition     : all .24s ease-in-out;
+$transition-fast: all .12s ease-in-out;
+$transition-slow: all .48s ease-in-out;
+
+/*------------------------------------*\
+    $VARIABLE CLASSES
+\*------------------------------------*/
+
+$classes: (
+    primary  : $color-primary,
+    secondary: $color-secondary,
+    dark     : $color-dark,
+    light    : $color-light,
+    error    : $color-error,
+    default  : $color-default,
+    white    : $color-white
+);
+
+@each $class-color, $class in $classes {
+
+    .bg--#{$class-color} {
+        background-color: $class;
+    }
+
+    .color--#{$class-color} {
+        color: $class;
+    }
+
+    .border--#{$class-color} {
+        border-color: $class;
+    }
+
+}
