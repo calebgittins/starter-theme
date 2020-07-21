@@ -131,4 +131,32 @@ function td_display_title($field = '', $id = '', $class = '', $sub = false) {
 
 }
 
+/*------------------------------------*\
+    $FLEXIBLE PREVIEW PLUGIN
+\*------------------------------------*/
+
+function td_acf_image_path() {
+    $path = 'images/acf';
+    return $path;
+}
+
+add_filter( 'acf-flexible-content-preview.images_path', 'td_acf_image_path' );
+
+/*------------------------------------*\
+    $LIMIT ACF WYSIWYG
+\*------------------------------------*/
+
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+
+function my_toolbars( $toolbars ) {
+    $toolbars['Very Basic' ] = array();
+    $toolbars['Very Basic' ][1] = array( 'bold' , 'italic' , 'underline' );
+
+    if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false ) {
+        unset( $toolbars['Full' ][2][$key] );
+    }
+
+    return $toolbars;
+}
+
 ?>
