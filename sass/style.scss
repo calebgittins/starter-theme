@@ -11,19 +11,24 @@ Version: 0.0.1
     $IMPORT
 \*------------------------------------*/
 
+/* FONTS */
 @import "fonts/font-awesome/all.css";
+/* BASE */
 @import "reset";
+@import "helper";
 @import "variables";
 @import "mixins";
-@import "helper";
+/* VENDOR */
 @import "vendor/magnific-popup.scss";
 @import "vendor/slick.scss";
+@import "vendor/selectric.scss";
+/* LAYOUT */
 @import "animation";
 @import "global";
 @import "typography";
-@import "vendor/selectric.scss";
 @import "forms";
 @import "navigation";
 @import "media";
 @import "layout";
+/* DARK THEME */ 
 @import "dark";

@@ -32,46 +32,31 @@
     $MEDIA QUERIES
 \*------------------------------------*/
 
-$small-phone-width: 399px;
-
-/* Up to 400px - SMALL PHONE */
-
-$phone-width: 767px;
-
-/* Up to 768px - LARGER PHONE */
-
-$tablet-width: 1199px;
-
-/* Up to 1200px - TABLET */
-
-$laptop-width: 1919px;
-
-/* Up to 1920px - LAPTOP */
+$small-phone-width: 399px; /* Up to 400px - SMALL PHONE */
+$phone-width: 767px; /* Up to 768px - LARGER PHONE */
+$tablet-width: 1199px; /* Up to 1200px - TABLET */
+$laptop-width: 1919px; /* Up to 1920px - LAPTOP */
 
 @mixin small-phone {
-    @media handheld,
-    only screen and (max-width: #{$small-phone-width}) {
+    @media handheld, only screen and (max-width: #{$small-phone-width}) {
         @content;
     }
 }
 
 @mixin phone {
-    @media handheld,
-    only screen and (max-width: #{$phone-width}) {
+    @media handheld, only screen and (max-width: #{$phone-width}) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media handheld,
-    only screen and (max-width: #{$tablet-width}) {
+    @media handheld, only screen and (max-width: #{$tablet-width}) {
         @content;
     }
 }
 
 @mixin laptop {
-    @media handheld,
-    only screen and (max-width: #{$laptop-width}) {
+    @media handheld, only screen and (max-width: #{$laptop-width}) {
         @content;
     }
 }
@@ -191,4 +176,17 @@ $laptop-width: 1919px;
     position: absolute;
     width: 1px;
     word-wrap: normal !important;
+}
+
+/*------------------------------------*\
+    $ZOOM ANIMATION 
+\*------------------------------------*/            
+
+@mixin zoom {
+    .will-zoom {
+        transition: $transition-slow;
+    }
+    &:hover .will-zoom {
+        transform: scale(1.1,1.1);
+    }
 }
