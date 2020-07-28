@@ -9,3 +9,9 @@ This is a starter theme for all new WordPress sites.
 3. Open terminal and run *gulp*
 4. Update theme name in style.scss
 5. Start coding!
+
+## Media Queries
+
+- Defined in mixins.scss
+- laptop, tablet, mobile are defaults
+- @include min-width($px) and @include max-width($px) for custom media queries
