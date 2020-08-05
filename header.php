@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-<?php if ( get_field('td_theme_colour','options') ) : ?>
-	<meta name="theme-color" content="<?php echo get_field('td_theme_colour','options'); ?>">
-<?php endif; ?>
-
-<?php wp_head(); ?>
-
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	<?php if ( get_field('td_theme_colour','options') ) : ?>
+		<meta name="theme-color" content="<?php echo get_field('td_theme_colour','options'); ?>">
+	<?php endif; ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
