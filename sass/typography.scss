@@ -13,37 +13,37 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $font-heading;
 }
 
-h1, .heading--alpha {
+h1, .h1 {
     font-size: 56px;
     line-height: 1.4em; 
 	margin-bottom: 0.5em; 
 }
 
-h2, .heading--beta {
+h2, .h2 {
     font-size: 48px; 
     line-height: 1.348em; 
 	margin-bottom: 0.913em; 
 }
 
-h3, .heading--gamma {
+h3, .h3 {
     font-size: 32px; 
     line-height: 1.421em; 
 	margin-bottom: 1.105em; 
 }
 
-h4, .heading--delta {
+h4, .h4 {
     font-size: 24px; 
     line-height: 1.444em; 
 	margin-bottom: 1.167em; 
 }
 
-h5, .heading--epsilon {
+h5, .h5 {
 	font-size: 20px; 
     line-height: 1.5em; 
 	margin-bottom: 1.313em; 
 }
 
-h6, .heading--zeta {
+h6, .h6 {
 	font-size: 18px; 
 	line-height: 1.571em;
 	margin-bottom: 1.5em; 
