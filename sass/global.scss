@@ -134,13 +134,12 @@ iframe {
     max-width: 1200px;    
 }
 
-.wrap--fixed {
-	position: absolute;
-	z-index: 5;
-	top: 0;
-	left: 50%;
-	bottom: 0;
-	transform: translateX(-50%);
+.wrap--small {
+	max-width: 800px;
+}
+
+.wrap--large {
+	max-width: 1400px;
 }
 
 /*------------------------------------*\
