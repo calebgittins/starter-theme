@@ -1,69 +1,59 @@
 @import "variables";
-
 .login {
-    color: $color-default;
-}
-
-.login h1 a {
-    background-image: url(../../images/admin/logo.png) !important;
-    -webkit-background-size: 124px !important;
-            background-size: 124px !important;
-    background-position: center top;
-    background-repeat: no-repeat;
-    margin: 0 auto 24px;
-    padding: 0;
-    width: 124px;    
-    height: 124px;
-    text-indent: -9999px;
-    outline: 0;
-    display: block;
-}
-
-.login label { 
-    color: $color-default; 
-}
-
-.login input[type=checkbox] {
-    box-shadow: none;
-    border-color: $color-primary;
-}
-
-.login input[type=checkbox]:checked:before { 
-    color: $color-primary;
-} 
-
-.login .button-primary {
-    background: $color-primary;
-    border: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: none;
-    transition: $transition;
-}
-
-.login .button-primary:active,
-.login .button-primary:hover {
-    background-color: $color-secondary;
-    border: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    text-shadow: none;
-}
-
-.login #backtoblog a, 
-.login #nav a { 
-    color: $color-primary; 
-}
-
-.login #backtoblog a:hover, 
-.login #nav a:hover { 
-    color: $color-secondary; 
-}
-
-.login #login_error, 
-.login .message { 
-    color: $color-default; 
-    border-left-color: $color-primary;
+	color: $color-default;
+	h1 a {
+		background-image: url(../../images/admin/logo.png) !important;
+		-webkit-background-size: 124px !important;
+				background-size: 124px !important;
+		background-position: center top;
+		background-repeat: no-repeat;
+		margin: 0 auto 24px;
+		padding: 0;
+		width: 124px;
+		height: 124px;
+		text-indent: -9999px;
+		outline: 0;
+		display: block;
+	}
+	label {
+		color: $color-default;
+	}
+	input[type=checkbox] {
+		box-shadow: none;
+		border-color: $color-primary;
+	}
+	input[type=checkbox]:checked:before {
+		color: $color-primary;
+	}
+	.button-primary {
+		background: $color-primary;
+		border: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		color: #fff;
+		text-decoration: none;
+		text-shadow: none;
+		transition: $transition;
+	}
+	.button-primary:active,
+	.button-primary:hover {
+		background-color: $color-secondary;
+		border: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		text-shadow: none;
+	}
+	#backtoblog a,
+	#nav a {
+		color: $color-primary;
+	}
+	#backtoblog a:hover,
+	#nav a:hover {
+		color: $color-secondary;
+	}
+	#login_error,
+	.message {
+		color: $color-default;
+		border-left-color: $color-primary;
+	}
 }

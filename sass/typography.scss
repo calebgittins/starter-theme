@@ -4,217 +4,153 @@ body {
 	font-family: $font-body;
 	color: $color-default;
 	-moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
-
-h1, h2, h3, h4, h5, h6 { 
-	font-weight: 700; 
-	color: $color-default;
-	font-family: $font-heading;
-}
-
-h1, .h1 {
-    font-size: 56px;
-    line-height: 1.4em; 
-	margin-bottom: 0.5em; 
-}
-
-h2, .h2 {
-    font-size: 48px; 
-    line-height: 1.348em; 
-	margin-bottom: 0.913em; 
-}
-
-h3, .h3 {
-    font-size: 32px; 
-    line-height: 1.421em; 
-	margin-bottom: 1.105em; 
-}
-
-h4, .h4 {
-    font-size: 24px; 
-    line-height: 1.444em; 
-	margin-bottom: 1.167em; 
-}
-
-h5, .h5 {
-	font-size: 20px; 
-    line-height: 1.5em; 
-	margin-bottom: 1.313em; 
-}
-
-h6, .h6 {
-	font-size: 18px; 
-	line-height: 1.571em;
-	margin-bottom: 1.5em; 
-}
-
-small, .small {
-    font-size: 14px;
-    line-height: 1.4em;
-}
-
-sup,
-sub {
-	font-size: 0.5em;
-}
-
-sup {
-	vertical-align: super;
-}
-
-sub {
-	vertical-align: sub;
-}
-
-/*------------------------------------*\
-    $BLOCKQUOTE
-\*------------------------------------*/
-
-blockquote {
-	font-size: 1.125em;
-	line-height: 1.618em;
-
-	p + p {
-		margin-top: 1em; 
+// Headings
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+		color: $color-default;
+		font-family: $font-heading;
 	}
-}
-
-/*------------------------------------*\
-    $LIST - ICON
-\*------------------------------------*/
-
-.list--icon li {
-	position: relative;
-	padding-left: 2em;
-}
-
-.list--icon .fa {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/*------------------------------------*\
-    $WYSIWYG
-\*------------------------------------*/
-
-.wysiwyg {
-
-	/*------------------------------------*\
-	    $TEXT
-	\*------------------------------------*/
-
-	p,
-	ul,
-	ol,
-	blockquote,
-	table,
-	iframe {
-		margin-bottom: 1.48em;
+	h1, .h1 {
+		font-size: 56px;
+		line-height: 1.4em;
+		margin-bottom: 0.5em;
 	}
-
-	/*------------------------------------*\
-	    $LINKS
-	\*------------------------------------*/
-
-	a:not(.button) {
-		border-bottom: 1px solid;
+	h2, .h2 {
+		font-size: 48px;
+		line-height: 1.348em;
+		margin-bottom: 0.913em;
 	}
-
-	/*------------------------------------*\
-	    $TABLES
-	\*------------------------------------*/
-
-	table {
-		border-collapse: collapse;
+	h3, .h3 {
+		font-size: 32px;
+		line-height: 1.421em;
+		margin-bottom: 1.105em;
 	}
-
-	table th, 
-	table td {
-		padding: 0.625em;
-		border-bottom: 1px solid $color-light;
+	h4, .h4 {
+		font-size: 24px;
+		line-height: 1.444em;
+		margin-bottom: 1.167em;
 	}
-
-	table th {
-	    font-weight: 700;
-		text-align: left;
+	h5, .h5 {
+		font-size: 20px;
+		line-height: 1.5em;
+		margin-bottom: 1.313em;
 	}
-
-	/*------------------------------------*\
-	    $LISTS
-	\*------------------------------------*/
-
-	li:not(.gfield) {
+	h6, .h6 {
+		font-size: 18px;
+		line-height: 1.571em;
+		margin-bottom: 1.5em;
+	}
+// Small
+	small, .small {
+		font-size: 14px;
+		line-height: 1.4em;
+	}
+	sup,
+	sub {
+		font-size: 0.5em;
+	}
+	sup {
+		vertical-align: super;
+	}
+	sub {
+		vertical-align: sub;
+	}
+// Blockquote
+	blockquote {
+		font-size: 1.125em;
+		line-height: 1.618em;
+		p + p {
+			margin-top: 1em;
+		}
+	}
+// List - Icon
+	.list--icon li {
 		position: relative;
-		padding-left: 1.5em;
-	}
-
-	li > ul, 
-	li > ol {
-	    margin-top: 0.625em;
-	    margin-bottom: 0;
-	}
-
-	ul.gfield_checkbox li,
-	ul.gfield_radio li {
-		padding-left: 0;
-	}
-
-	/*------------------------------------*\
-	    $UNORDERED LIST
-	\*------------------------------------*/
-
-	ul li:before {
-		content: '\2022';
-		position: absolute;
-		top: 0;
-		left: 0;
-		color: $color-primary;
-	}
-
-	.gform_fields li:before { 
-		display: none; 
-	}
-
-	/*------------------------------------*\
-	    $ORDERED LIST
-	\*------------------------------------*/
-
-	ol {
-		list-style: none;
-		counter-reset: number-counter;
-	}
-
-	ol li {
 		padding-left: 2em;
-		position: relative;
 	}
-
-	ol li:before {
-		content: counter(number-counter)'.';
-		counter-increment: number-counter;
+	.list--icon .fa {
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: $color-primary;		
 	}
-
-	/*------------------------------------*\
-	    $FORMS
-	\*------------------------------------*/
-
-	.gform_wrapper ul {
-		margin-bottom: 0;
+// WYSIWYG
+	.wysiwyg {
+		// TEXT
+		p,
+		ul,
+		ol,
+		blockquote,
+		table,
+		iframe {
+			margin-bottom: 1.48em;
+		}
+		// LINKS
+		a:not(.button) {
+			border-bottom: 1px solid;
+		}
+		// TABLES
+		table {
+			border-collapse: collapse;
+		}
+		table th,
+		table td {
+			padding: 0.625em;
+			border-bottom: 1px solid $color-light;
+		}
+		table th {
+			font-weight: 700;
+			text-align: left;
+		}
+		// LISTS
+		li:not(.gfield) {
+			position: relative;
+			padding-left: 1.5em;
+		}
+		li > ul,
+		li > ol {
+			margin-top: 0.625em;
+			margin-bottom: 0;
+		}
+		ul.gfield_checkbox li,
+		ul.gfield_radio li {
+			padding-left: 0;
+		}
+		// UNORDERED LIST
+		ul li:before {
+			content: '\2022';
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: $color-primary;
+		}
+		.gform_fields li:before {
+			display: none;
+		}
+		// ORDERED LIST
+		ol {
+			list-style: none;
+			counter-reset: number-counter;
+		}
+		ol li {
+			padding-left: 2em;
+			position: relative;
+		}
+		ol li:before {
+			content: counter(number-counter)'.';
+			counter-increment: number-counter;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: $color-primary;
+		}
+		// FORMS
+		.gform_wrapper ul {
+			margin-bottom: 0;
+		}
+		.gfield_checkbox li,
+		.gfield_radio li {
+			padding-left: 0;
+		}
 	}
-
-	.gfield_checkbox li,
-	.gfield_radio li {
-		padding-left: 0;
-	}
-
-}
-
-
-
-

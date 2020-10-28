@@ -5,15 +5,15 @@ $highlight-color: $color-primary;
 @import "admin/_admin.scss";
 
 .wp-core-ui .button-primary {
-    background-color: $color-primary;
-    color: #fff;
+	background-color: $color-primary;
+	color: #fff;
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: $color-secondary;
-        color: #fff;
-    }
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: $color-secondary;
+		color: #fff;
+	}
 }
 
 body .acf-fc-popup ul:before {

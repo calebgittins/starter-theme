@@ -6,34 +6,25 @@ Author URI: http://www.thirteendigital.com.au
 Version: 0.0.1
 */
 
-
-/*------------------------------------*\
-    $IMPORT
-\*------------------------------------*/
-
-/* FONTS */
-@import "fonts/font-awesome/all.css";
-
-/* BASE */
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "helper";
-
-/* VENDOR */
-@import "vendor/magnific-popup.scss";
-@import "vendor/slick.scss";
-@import "vendor/selectric.scss";
-
-/* LAYOUT */
-@import "spacing";
-@import "animation";
-@import "global";
-@import "typography";
-@import "forms";
-@import "navigation";
-@import "media";
-@import "layout";
-
-/* DARK THEME */ 
-@import "dark";
+// Fonts
+	@import "fonts/font-awesome/all.css";
+// Base
+	@import "variables";
+	@import "mixins";
+	@import "reset";
+	@import "helper";
+// Vendor
+	@import "vendor/magnific-popup.scss";
+	@import "vendor/slick.scss";
+	@import "vendor/selectric.scss";
+// Layout
+	@import "spacing";
+	@import "animation";
+	@import "global";
+	@import "typography";
+	@import "forms";
+	@import "navigation";
+	@import "media";
+	@import "layout";
+// Dark Theme
+	@import "dark";
