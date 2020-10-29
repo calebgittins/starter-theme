@@ -6,10 +6,10 @@
 	$space-s-laptop: 32px;
 	$space-m-laptop: 26px;
 	$space-l-laptop: 96px;
-// Mobile
-	$space-s-mobile: 20px;
-	$space-m-mobile: 32px;
-	$space-l-mobile: 60px;
+// Phone
+	$space-s-phone: 20px;
+	$space-m-phone: 32px;
+	$space-l-phone: 60px;
 // Spacer item
 	.spacer--s {
 		height: $space-s;
@@ -33,12 +33,12 @@
 	}
 	@include phone {
 		.spacer--s {
-			height: $space-s-mobile;
+			height: $space-s-phone;
 		}
 		.spacer--m {
-			height: $space-m-mobile;
+			height: $space-m-phone;
 		}
 		.spacer--l {
-			height: $space-l-mobile;
+			height: $space-l-phone;
 		}
 	}
