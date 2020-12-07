@@ -17,8 +17,7 @@
 // Favicon
 	add_action('admin_head', 'td_admin_favicon');
 	function td_admin_favicon() {
-		echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri(). '/images/apple/favicon.png" sizes="16x16" type="image/x-icon" />';
-		echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri(). '/images/apple/favicon@2x.png" sizes="32x32" type="image/x-icon" />';
+		echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri(). '/images/favicon/favicon.png" sizes="32x32" type="image/x-icon" />';
 	}
 // Custom admin theme
 	function td_additional_admin_color_schemes() {

@@ -38,6 +38,7 @@
 		text-transform: uppercase;
 		padding: 0.8em 1.24em;
 		font-weight: 700;
+
 		&:hover {
 			text-decoration: none;
 			background-color: $color-secondary;
@@ -51,6 +52,7 @@
 	}
 	a.button--alt {
 		background-color: $color-secondary;
+
 		&:hover {
 			background-color: $color-primary;
 		}
@@ -58,10 +60,16 @@
 	a.button--light {
 		background-color: $color-white;
 		color: $color-primary;
+
 		&:hover {
 			background-color: $color-primary;
 			color: $color-white;
 		}
+	}
+	// Icon only
+	.button--icon {
+		padding: 0;
+		background-color: transparent;
 	}
 // Other Elements
 	hr {
@@ -71,11 +79,13 @@
 		width: 100%;
 		margin: 48px auto;
 	}
+
 	img,
 	iframe {
 		vertical-align: top;
 		max-width: 100%;
 	}
+	
 	::selection {
 		background: $color-primary;
 		color: $color-white;
@@ -86,6 +96,7 @@
 		opacity: 0;
 		transition: $transition-slow;
 	}
+
 	.b-loaded {
 		opacity: 1;
 	}
@@ -93,13 +104,15 @@
 	.wrap {
 		margin: 0 auto;
 		width: 90%;
-		max-width: 1200px;
+		max-width: 75rem; // 1200
 	}
+
 	.wrap--small {
-		max-width: 800px;
+		max-width: 50rem; // 800
 	}
+	
 	.wrap--large {
-		max-width: 1400px;
+		max-width: 87.5rem; // 1400
 	}
 // Header
 	.header {
@@ -116,16 +129,14 @@
 	}
 // Footer
 	.footer {
-		padding: 48px 0;
-		font-size: 14px;
-		line-height: 1em;
+		padding: $space-m 0;
 	}
 // Popup
 	.popup {
 		position: relative;
 		width: 80%;
-		max-width: 1200px;
-		margin: 100px auto;
+		max-width: 75rem; // 1200
+		margin: $space-l auto;
 		background-color: $color-white;
-		padding: 40px;
+		padding: $space-s;
 	}

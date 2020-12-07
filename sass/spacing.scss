@@ -1,11 +1,7 @@
 // Default
-	$space-s: 40px;
-	$space-m: 64px;
-	$space-l: 120px;
-// Laptop
-	$space-s-laptop: 32px;
-	$space-m-laptop: 26px;
-	$space-l-laptop: 96px;
+	$space-s: 2.5rem; // 40
+	$space-m: 5rem; // 80
+	$space-l: 7.5rem; // 120
 // Phone
 	$space-s-phone: 20px;
 	$space-m-phone: 32px;
@@ -19,17 +15,6 @@
 	}
 	.spacer--l {
 		height: $space-l;
-	}
-	@include laptop {
-		.spacer--s {
-			height: $space-s-laptop;
-		}
-		.spacer--m {
-			height: $space-m-laptop;
-		}
-		.spacer--l {
-			height: $space-l-laptop;
-		}
 	}
 	@include phone {
 		.spacer--s {

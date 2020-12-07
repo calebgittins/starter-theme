@@ -1,1 +1,0 @@
-<?php echo td_display_title('title',$id,'heading',true); ?>

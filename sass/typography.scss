@@ -1,6 +1,10 @@
-body {
+body, 
+html {
 	font-size: 16px;
-	line-height: 1.25em;
+	line-height: 1.75em;
+}
+
+body {
 	font-family: $font-body;
 	color: $color-default;
 	-moz-osx-font-smoothing: grayscale;
@@ -13,38 +17,38 @@ body {
 		font-family: $font-heading;
 	}
 	h1, .h1 {
-		font-size: 56px;
+		font-size: 6.25rem; // 100
 		line-height: 1.4em;
 		margin-bottom: 0.5em;
 	}
 	h2, .h2 {
-		font-size: 48px;
+		font-size: 5rem; // 80
 		line-height: 1.348em;
 		margin-bottom: 0.913em;
 	}
 	h3, .h3 {
-		font-size: 32px;
+		font-size: 3.75rem; // 60 
 		line-height: 1.421em;
 		margin-bottom: 1.105em;
 	}
 	h4, .h4 {
-		font-size: 24px;
+		font-size: 2.5rem; // 40
 		line-height: 1.444em;
 		margin-bottom: 1.167em;
 	}
 	h5, .h5 {
-		font-size: 20px;
+		font-size: 1.25rem; // 20
 		line-height: 1.5em;
 		margin-bottom: 1.313em;
 	}
 	h6, .h6 {
-		font-size: 18px;
+		font-size: 1rem; // 16
 		line-height: 1.571em;
 		margin-bottom: 1.5em;
 	}
 // Small
-	small, .small {
-		font-size: 14px;
+	.small, .body--small {
+		font-size: 0.88rem;
 		line-height: 1.4em;
 	}
 	sup,

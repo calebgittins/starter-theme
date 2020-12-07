@@ -11,8 +11,8 @@
 	selectricGforms();
 // Slick Slider
 	// Global settings
-		var slick_previous = '<a class="slick-arrow--previous"><i class="fa fa-angle-left"></i></a>';
-		var slick_next     = '<a class="slick-arrow--next"><i class="fa fa-angle-right"></i></a>';
+		var slick_previous = '<button class="slick-arrow--previous"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="screen-reader-text">Previous</span></button>';
+		var slick_next     = '<button class="slick-arrow--next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="screen-reader-text">Next</span></button>';
 	// Slick single
 		$('.js-slick-single').slick({
 			slidesToShow: 1,

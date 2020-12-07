@@ -12,13 +12,13 @@ Version: 0.0.1
 	@import "variables";
 	@import "mixins";
 	@import "reset";
+	@import "spacing";
 	@import "helper";
 // Vendor
 	@import "vendor/magnific-popup.scss";
 	@import "vendor/slick.scss";
 	@import "vendor/selectric.scss";
 // Layout
-	@import "spacing";
 	@import "animation";
 	@import "global";
 	@import "typography";
