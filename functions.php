@@ -31,7 +31,6 @@
 		add_action( 'wp_enqueue_scripts', 'td_load_javascript_files' );
 		function td_load_javascript_files() {
 			$rand = rand( 1, 9999 );
-			//wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAS-PIIwiBkyt54BukihtDtzl3kmlG4_0Y&', array( 'jquery' ), NULL, true );
 			wp_register_script( 'theme-vendor', get_template_directory_uri() . '/js/min/vendor.min.js', array('jquery'), $rand, true );
 			wp_enqueue_script( 'theme-vendor' );
 			wp_register_script( 'theme-functions', get_template_directory_uri() . '/js/min/custom.min.js', array('jquery'), $rand, true );

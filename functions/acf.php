@@ -24,11 +24,6 @@
 			'capability'  => 'manage_options'
 		));
 	}
-// Acf Google Map
-	function td_acf_init() {
-		acf_update_setting('google_api_key', 'AIzaSyAS-PIIwiBkyt54BukihtDtzl3kmlG4_0Y');
-	}
-	add_action('acf/init', 'td_acf_init');
 // Display Acf Clone Field Group
 	/*
 	 * Displays a link using clone field values - must be set to "Group"
