@@ -57,12 +57,13 @@
 	}
 // Grid
 	.grid {
-		@include clearfix;
-		margin-left: -24px;
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -$space-s;
 	}
 	.grid__item {
-		float: left;
-		padding-left: 24px;
+		flex-shrink: 0;
+		padding-left: $space-s;
 		width: 100%;
 	}
 	.grid__item--half {
@@ -82,6 +83,7 @@
 	}
 	.grid--tight {
 		margin-left: 0;
+		
 		.grid__item {
 			padding-left: 0;
 		}

@@ -17,11 +17,6 @@
 		}
 	// Enable post thumbnails
 		add_theme_support('post-thumbnails');
-	// Custom image sizes
-		if ( function_exists( 'add_image_size' ) ) {
-			add_image_size( 'post-thumbnail', 242, 224, true );
-			add_image_size( 'post-featured', 815, 450, true );
-		}
 	// Remove inline gallery styling
 		add_filter( 'use_default_gallery_style', '__return_false' );
 	// Remove inline caption style
@@ -35,7 +30,6 @@
 			wp_enqueue_script( 'theme-vendor' );
 			wp_register_script( 'theme-functions', get_template_directory_uri() . '/js/min/custom.min.js', array('jquery'), $rand, true );
 			wp_enqueue_script( 'theme-functions' );
-			wp_localize_script( 'theme-functions', 'theme_vars', array( 'template_directory' => get_template_directory_uri() ));
 		}
 // Styles
 	// Load Stylesheet
