@@ -2,9 +2,9 @@
 
 <div class="wrap">
 	
-	<?php get_template_part('inc/heading'); ?>
-	
 	<?php if(have_posts()) : ?>
+
+		<h1>Search results for <?php echo esc_html(stripslashes_deep(get_search_query())); ?></h1>
 			
 		<?php if (function_exists('wp_searchheader')) : ?>
 			<div class="wysiwyg">

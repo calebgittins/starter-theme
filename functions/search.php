@@ -1,4 +1,18 @@
 <?php
+// Update Search Form Html
+    function td_change_search_form( $form ) {
+        $form = '
+        <div class="search">
+            <form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
+                <label class="screen-reader-text" for="s">' . __('Search',  'domain') . '</label>
+                <input type="search" value="' . esc_html(stripslashes_deep(get_search_query())) . '" name="s" id="s" placeholder="Search&hellip;" />
+                <input type="submit" id="searchsubmit" value="'. esc_attr__('Go', 'domain') .'" />
+            </form>
+        </div>
+        ';
+        return $form;
+    }
+    add_filter( 'get_search_form', 'td_change_search_form' );
 // SEARCH RESULTS
     // results count plugin
     # Define version number globally
@@ -27,31 +41,17 @@
                 # Check if there is less than one page of results & alter text to suit
                 if ($numposts>$posts_per_page) {
                         # Multiple pages of results
-                        echo '<p>Showing results <b> '.$startpost. '</b> - <b>' .$endpost. '</b> of <b>' .$numposts_pretty. '</b> for ';
+                        echo '<p>Showing results <b> '.$startpost. '</b> - <b>' .$endpost. '</b> of <b>' .$numposts_pretty. '</b>';
                     } else {
                     # Check if there is only a single result & alter text to suit
                         if ($numposts!=1) {
                         # Single page - multiple results
-                            echo '<p>Showing <b>'.$numposts_pretty.'</b> results for ';
+                            echo '<p>Showing <b>'.$numposts_pretty.'</b> results';
                         } else {
                             # Single result
-                            echo '<p>Showing <b>'.$numposts_pretty.'</b> result for ';
+                            echo '<p>Showing <b>'.$numposts_pretty.'</b> result';
                         }
                     }
-                # Search results (display search terms).
-                if (is_search()){
-                    $search_terms = get_query_var('search_terms');
-                    # Alter text if there is more than one search term used.
-                    if (count($search_terms)!=1) {
-                        echo 'the search terms: <b>';
-                    } else {
-                        echo 'the search term: <b>';
-                    }
-                    # Display the search terms used.
-                    for ($i = 0; $i < count($search_terms); $i++){
-                        echo ' <a href="' . get_option('home') . '/?s=', $search_terms[$i], '" title="search this site for: ', $search_terms[$i], '">', $search_terms[$i], '</a>';
-                    }
-                }
                 # Archive pages by date (display date range info).
                 if (is_date()){
                     # Check if the date is a day, a month or a whole year.

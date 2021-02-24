@@ -86,20 +86,6 @@
 			<meta name="msapplication-square310x310logo" content="<?php echo get_stylesheet_directory_uri();?>/images/favicon/icon_largetile.png">
 			<?php
 		}
-// Update Search Form Html
-	function td_change_search_form( $form ) {
-		$form = '
-		<div class="search">
-			<form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
-				<label class="screen-reader-text" for="s">' . __('Search',  'domain') . '</label>
-				<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search&hellip;" />
-				<input type="submit" id="searchsubmit" value="'. esc_attr__('Go', 'domain') .'" />
-			</form>
-		</div>
-		';
-		return $form;
-	}
-	add_filter( 'get_search_form', 'td_change_search_form' );
 // Add Current Class When On Single
 	function td_menu_item_classes( $classes, $item, $args ) {
 		$posts_page = get_option('page_for_posts');
