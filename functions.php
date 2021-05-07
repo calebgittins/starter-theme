@@ -103,4 +103,23 @@
 			<div class="hamburger__line hamburger__line--bottom"></div>
 		</div>';
 	}
+// Yoast SEO - Use ACF Field to set og:image on post
+	// function td_set_og_image_from_field($presentation) {
+	//     global $post;
+	//     if (isset($post) && is_singular('post')) {
+	//         if (get_field('td_post_hero_image', $post->ID)) {
+	//             $image = get_field('td_post_hero_image', $post->ID);
+	//             $url = $image['url'];
+	//         }
+	//         $presentation->open_graph_images = [
+	//             [
+	//                 'url' => $url,
+	//                 'width' => 1024,
+	//                 'height' => 512
+	//             ]
+	//         ];
+	//     }
+	//     return $presentation;
+	// }
+	// add_filter('wpseo_frontend_presentation', 'td_set_og_image_from_field', 30);
 ?>
