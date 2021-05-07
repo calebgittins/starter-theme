@@ -118,6 +118,11 @@ httpdocs/wp-content/themes/twentytwelve/
 httpdocs/wp-content/themes/twentythirteen/
 httpdocs/wp-content/themes/twentyfourteen/
 httpdocs/wp-content/themes/twentyfifteen/
+httpdocs/wp-content/themes/twentysixteen/
+httpdocs/wp-content/themes/twentyseventeen/
+httpdocs/wp-content/themes/twentyeighteen/
+httpdocs/wp-content/themes/twentynineteen/
+httpdocs/wp-content/themes/twentytwenty/
 
 # ignore node/grunt dependency directories
 node_modules/
