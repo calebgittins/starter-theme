@@ -160,3 +160,31 @@ body {
 			padding-left: 0;
 		}
 	}
+
+
+// Message
+	.message {
+		position: relative;
+		border: 1px solid;
+		padding: .5em .5em .5em 3em;
+
+		&:before {
+			content: "\f05a";
+			position: absolute;
+			top: .8em;
+			left: 1em;
+			font-size: 1em;
+			line-height: 1em;
+			font-family: $font-icon;
+		}
+	}
+
+// Message - Success
+	.message--success:before {
+		content: "\f06a";
+	}
+
+// Message - Error
+	.message--error:before {
+		content: "\f058";
+	}

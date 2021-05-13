@@ -200,31 +200,42 @@
 			margin-top: -5px;
 			background: $color-white;
 		}
+
+// Inline List
+
+.gf_list_inline {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -1rem;
+	margin-bottom: -1rem;
+
+	li {
+		flex-shrink: 0;
+		padding-left: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	li + li {
+		margin-top: 0;
+	}
+}
+
 // Gravity Forms - Datepicker
+	.ginput_container_date,
 	.custom-datepicker {
 		position: relative;
-		&:before,
-		&:after {
-			position: absolute;
-			z-index: 1;
-			width: 34px;
-			right: 0;
-		}
+
 		&:before {
-			content: '';
-			top: 0;
-			right: 0;
-			bottom: 0;
-			background-color: $color-primary;
-		}
-		&:after {
+			position: absolute;
+			z-index: 1;			
+			right: 1em;
 			content: '\f133';
 			top: 50%;
 			transform: translateY(-50%);
 			font-family: $font-icon;
-			color: $color-white;
-			text-align: center;
+			color: $color-primary;
 		}
+		
 		input {
 			position: relative;
 			z-index: 5;
@@ -282,7 +293,7 @@
 		padding: $space-m;
 		text-align: center;
 	}
-	
+
 	.gform_drop_area button {
 		margin: $space-xs 0;
 	}
