@@ -2,13 +2,11 @@
 // Update Search Form Html
     function td_change_search_form( $form ) {
         $form = '
-        <div class="search">
-            <form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
+            <form class="form--search" role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
                 <label class="screen-reader-text" for="s">' . __('Search',  'domain') . '</label>
                 <input type="search" value="' . esc_html(stripslashes_deep(get_search_query())) . '" name="s" id="s" placeholder="Search&hellip;" />
-                <input type="submit" id="searchsubmit" value="'. esc_attr__('Go', 'domain') .'" />
-            </form>
-        </div>
+                <button type="submit" id="searchsubmit"><span class="screen-reader-text">' . esc_attr__('Go', 'domain') . '</span><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>        
         ';
         return $form;
     }

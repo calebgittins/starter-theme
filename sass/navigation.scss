@@ -75,23 +75,22 @@
 		&__line--bottom {
 			bottom: 3px;
 		}
-		.hamburger--active {
-			.hamburger__line--top {
-				top: 50%;
-				margin-top: -3px;
-				transform: rotate(45deg);
-			}
-			.hamburger__line--middle {
-				width: 0;
-			}
-			.hamburger__line--bottom {
-				bottom: 50%;
-				margin-bottom: -3px;
-				transform: rotate(-45deg);
-			}
+	}
+	.hamburger.is-active {
+		.hamburger__line--top {
+			top: 50%;
+			margin-top: -3px;
+			transform: rotate(45deg);
+		}
+		.hamburger__line--middle {
+			width: 0;
+		}
+		.hamburger__line--bottom {
+			bottom: 50%;
+			margin-bottom: -3px;
+			transform: rotate(-45deg);
 		}
 	}
-
 
 	@include min-width(1200px) {
 		.hamburger {

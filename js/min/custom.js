@@ -32,7 +32,7 @@
 // Toggle offscreen menu
 	$('.js-nav-toggle').click(function(e) {
 		e.preventDefault();
-		$(this).toggleClass('hamburger--active');
+		$(this).toggleClass('is-active');
 		$('.offscreen').toggleClass('offscreen--active');
 		$('body').toggleClass('body--offscreen-active');
 	});

@@ -1,12 +1,12 @@
 // Forms
 	input,
-	select,
+	form select,
 	textarea,
 	button {
 		font-family: inherit;
 	}
 	input,
-	select,
+	form select,
 	textarea {
 		font-size: 1rem;
 		line-height: 3em;
@@ -32,7 +32,7 @@
 	}
 	@include tablet {
 		input,
-		select,
+		form select,
 		textarea,
 		button {
 			-webkit-appearance: none;
@@ -46,12 +46,12 @@
 		margin-left: 0.25rem;
 	}
 	.gform_fields {
-		@include clearfix;
+		display: flex;		
+		flex-wrap: wrap;
 		margin-left: -$space-s;
 		margin-bottom: 0;
 	}
-	.gfield {
-		float: left;
+	.gfield {		
 		width: 100%;
 		padding-left: $space-s;
 		padding-bottom: $space-s;
@@ -68,28 +68,29 @@
 	.gf_first_quarter,
 	.gf_second_quarter,
 	.gf_third_quarter,
-	.gf_fourth_quarter {
-		float: left;
+	.gf_fourth_quarter,
+	.gfield--width-half,
+	.gfield--width-third,
+	.gfield--width-quarter {
+		flex-shrink: 0;
 	}
 	.gf_left_half,
-	.gf_right_half {
+	.gf_right_half,
+	.gfield--width-half {
 		width: 50%;
 	}
-	.gf_right_half {
-		clear: right;
-	}
-	.gf_right_half+.gfield:not(.gf_left_half) {
-		clear: both;
-	}
+
 	.gf_left_third,
 	.gf_middle_third,
-	.gf_right_third {
+	.gf_right_third,
+	.gfield--width-third {
 		width: 33.333%;
 	}
 	.gf_first_quarter,
 	.gf_second_quarter,
 	.gf_third_quarter,
-	.gf_fourth_quarter {
+	.gf_fourth_quarter,
+	.gfield--width-quarter {
 		width: 25%;
 	}
 	@include phone {
@@ -150,13 +151,15 @@
 			label {
 				position: relative;
 				padding-left: 2em;
+				min-height: 20px;
+				display: block;
 			}
 			li+li {
 				margin-top: 0.5em;
 			}
 			.custom-input {
 				position: absolute;
-				top: 0;
+				top: 4px;
 				left: 0;
 				width: 20px;
 				height: 20px;
@@ -179,6 +182,7 @@
 			font-weight: 700;
 			color: $color-white;
 			font-size: 14px;
+			line-height: 20px;
 		}
 	// Radio Button
 		.gfield_radio input[type="radio"]+label span.custom-input {
@@ -227,11 +231,16 @@
 			background-color: transparent;
 		}
 	}
+// Gravity Forms - Calendar 
+
 // Gravity Forms - Errors
-	.validation_error {
+	.validation_error,
+	.gform_submission_error {
 		display: block;
-		margin-bottom: 1em;
+		font-size: 1rem;
+		margin-bottom: 2em;
 		color: $color-error;
+
 		&:before {
 			content: '\f06a';
 			font-family: $font-icon;
@@ -257,4 +266,28 @@
 	@include placeholder {
 		color: $color-default;
 		opacity: 1;
+	}
+// Search Form
+	.form--search {
+		display: flex;
+
+		button {
+			flex-grow: 0;
+		}
+	}
+
+// File upload
+	.ginput_container_fileupload {
+		border: 2px dashed;
+		padding: $space-m;
+		text-align: center;
+	}
+	
+	.gform_drop_area button {
+		margin: $space-xs 0;
+	}
+
+	.gform_drop_instructions,
+	.gform_fileupload_rules {
+		display: block;
 	}

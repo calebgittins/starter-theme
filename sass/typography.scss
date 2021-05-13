@@ -79,6 +79,20 @@ body {
 		top: 0;
 		left: 0;
 	}
+// TABLES
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+	table th,
+	table td {
+		padding: 0.625em;
+		border-bottom: 1px solid $color-light;
+	}
+	table th {
+		font-weight: 700;
+		text-align: left;
+	}
 // WYSIWYG
 	.wysiwyg {
 		// TEXT
@@ -94,19 +108,7 @@ body {
 		a:not(.button) {
 			border-bottom: 1px solid;
 		}
-		// TABLES
-		table {
-			border-collapse: collapse;
-		}
-		table th,
-		table td {
-			padding: 0.625em;
-			border-bottom: 1px solid $color-light;
-		}
-		table th {
-			font-weight: 700;
-			text-align: left;
-		}
+		
 		// LISTS
 		li:not(.gfield) {
 			position: relative;

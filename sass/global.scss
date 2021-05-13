@@ -31,12 +31,12 @@
 	%button {
 		display: inline-block;
 		vertical-align: top;
-		font-size: 14px;
+		font-size: 1rem;
 		line-height: 1em;
 		color: $color-white;
 		background-color: $color-primary;
 		text-transform: uppercase;
-		padding: 0.8em 1.24em;
+		padding: 1em 2em;
 		font-weight: 700;
 
 		&:hover {

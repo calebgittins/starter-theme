@@ -6,20 +6,12 @@ $highlight-color: $color-primary;
 
 .wp-core-ui .button-primary {
 	background-color: $color-primary;
-	color: #fff;
+	color: $color-white;
 
 	&:hover,
 	&:focus,
 	&:active {
 		background-color: $color-secondary;
-		color: #fff;
+		color: $color-white;
 	}
-}
-
-body .acf-fc-popup ul:before {
-	content: 'Select a layout';
-}
-
-body .acf-fc-popup ul:after {
-	display: none;
 }
