@@ -24,8 +24,15 @@
 	// Radio buttons and checkboxes markup
 		add_filter( 'gform_field_choice_markup_pre_render', function ( $choice_markup, $choice, $field, $value ) {
 			if ( $field->get_input_type() == 'radio' || $field->get_input_type() == 'checkbox' ) {
-				$new_choice_markup .= str_replace('</label>','<span class="custom-input custom-input--' . $field->get_input_type() . '"></span></label>',$choice_markup);
-				$choice_markup = $new_choice_markup;
+				return str_replace('</label>','<span class="custom-input custom-input--' . $field->get_input_type() . '"></span></label>',$choice_markup);
 			}
 			return $choice_markup;
 		}, 10, 4 );
+	// Consent field markup
+		add_filter( 'gform_field_content', function ( $field_content, $field ) {
+		    if ( $field->type == 'consent' ) {
+		        return str_replace('</label>','<span class="custom-input custom-input--checkbox"></span></label>',$field_content);
+		    }
+		  
+		    return $field_content;
+		}, 10, 2 );		

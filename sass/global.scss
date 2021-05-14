@@ -86,7 +86,8 @@
 		max-width: 100%;
 	}
 	
-	::selection {
+	::selection,
+	mark {
 		background: $color-primary;
 		color: $color-white;
 		text-shadow: none;
@@ -118,9 +119,15 @@
 	.header {
 		position: relative;
 		z-index: 1200;
+		padding: $space-s 0;
 	}
 	.header__logo {
 		position: relative;
+	}
+	.header .wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 	@include tablet {
 		.header__nav {

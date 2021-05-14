@@ -143,7 +143,8 @@
 // Gravity Forms - Checkbox and Radio Buttons
 	// Checkbox & Radio
 		.gfield_checkbox,
-		.gfield_radio {
+		.gfield_radio,
+		.ginput_container_consent {
 			input[type="checkbox"],
 			input[type="radio"] {
 				@include visually-hidden;
@@ -167,13 +168,14 @@
 				border: 1px solid $color-primary;
 			}
 			// SELECTED
-			input[type="checkbox"]:checked+label span.custom-input,
-			input[type="radio"]:checked+label span.custom-input {
+			input[type="checkbox"]:checked + label .custom-input,
+			input[type="radio"]:checked + label .custom-input {
 				background-color: $color-primary;
 			}
 		}
 	// Checkbox
-		.gfield_checkbox input[type="checkbox"]:checked+label span.custom-input:before {
+		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
+		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before {
 			content: '\f00c';
 			position: absolute;
 			top: 0;
@@ -182,13 +184,13 @@
 			font-weight: 700;
 			color: $color-white;
 			font-size: 14px;
-			line-height: 20px;
+			line-height: 18px;
 		}
 	// Radio Button
-		.gfield_radio input[type="radio"]+label span.custom-input {
+		.gfield_radio input[type="radio"]+label .custom-input {
 			border-radius: 100px;
 		}
-		.gfield_radio input[type="radio"]:checked+label span.custom-input:before {
+		.gfield_radio input[type="radio"]:checked+label .custom-input:before {
 			content: '';
 			width: 10px;
 			height: 10px;
@@ -250,6 +252,7 @@
 		display: block;
 		font-size: 1rem;
 		margin-bottom: 2em;
+		font-weight: 400;
 		color: $color-error;
 
 		&:before {
@@ -301,4 +304,29 @@
 	.gform_drop_instructions,
 	.gform_fileupload_rules {
 		display: block;
+	}
+
+// List field
+	.gfield_list_group_item {
+		margin-bottom: 1em;
+	}
+
+	.gfield_list_group + .gfield_list_group {
+		margin-top: 2em;
+	}
+
+// Time field
+	.ginput_complex {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.hour_minute_colon {
+			margin: 0 .5em;
+			border: 1px solid transparent;
+		}
+
+		.gfield_time_ampm {
+			margin-left: .5em;
+		}
 	}

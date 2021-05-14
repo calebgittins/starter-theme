@@ -1,6 +1,6 @@
 // Accordion
 	.accordion__item {
-		margin-bottom: $space-m;
+		margin-bottom: 1em;
 	}
 	.accordion__item__heading {
 		display: flex;
@@ -8,13 +8,13 @@
 		align-items: center;
 		position: relative;
 		cursor: pointer;
-		padding: $space-s;
+		padding: 1em 2em;
 		color: $color-white;
 		background-color: $color-primary;
 		margin-bottom: 0;
 	}
 	.accordion__item__content {
-		padding: $space-s;
+		padding: 1em 2em;
 		border: solid $color-primary;
 		border-width: 0 1px 1px 1px;
 	}
