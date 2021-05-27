@@ -99,4 +99,9 @@
 		}
 	// Attach callback to 'tiny_mce_before_init'
 		add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+// Media Library - Set max size of uploaded images
+	function td_max_image_upload_size($imagesize, $file, $attachment_id){
+		return 2600;
+	}
+	add_filter( 'big_image_size_threshold', 'td_max_image_upload_size',10,3 );
 ?>
