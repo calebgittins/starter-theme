@@ -122,4 +122,8 @@
 	//     return $presentation;
 	// }
 	// add_filter('wpseo_frontend_presentation', 'td_set_og_image_from_field', 30);
+// WooCommerce
+	add_theme_support( 'woocommerce' );
+// Disable WooCommerce styles
+	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 ?>
