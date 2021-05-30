@@ -126,4 +126,10 @@
 	add_theme_support( 'woocommerce' );
 // Disable WooCommerce styles
 	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+	//Stop all themes from updating.
+	add_filter( 'site_transient_update_themes', 'remove_update_themes' );
+	function remove_update_themes( $value ) {
+	    return null;
+	}
 ?>
