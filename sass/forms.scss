@@ -15,6 +15,10 @@
 		border: 1px solid $color-light;
 		padding: 0 1em;
 		width: 100%;
+
+		&:focus {
+			border-color: $color-primary;
+		}
 	}
 // Textarea
 	textarea {
@@ -249,17 +253,8 @@
 // Gravity Forms - Errors
 	.validation_error,
 	.gform_submission_error {
-		display: block;
-		font-size: 1rem;
-		margin-bottom: 2em;
-		font-weight: 400;
-		color: $color-error;
-
-		&:before {
-			content: '\f06a';
-			font-family: $font-icon;
-			margin-right: 0.5em;
-		}
+		@extend .message;
+		@extend .message--error;
 	}
 	.gfield_error {
 		input,
@@ -284,9 +279,22 @@
 // Search Form
 	.form--search {
 		display: flex;
+		position: relative;
+
+		input {
+			padding-right: 4em;
+		}
 
 		button {
-			flex-grow: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 1em;
+			color: $color-primary;
+		}
+
+		button:hover {
+			background-color: transparent;
 		}
 	}
 

@@ -18,6 +18,10 @@
     text-align: left;
 }
 
+.selectric-focus .selectric {
+    border-color: $color-primary;
+}
+
 .selectric .label {
     display: block;
     white-space: nowrap;

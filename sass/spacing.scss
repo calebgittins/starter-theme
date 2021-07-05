@@ -9,6 +9,9 @@
 	$space-m-phone: 32px;
 	$space-l-phone: 60px;
 // Spacer item
+	.spacer--xs {
+		height: $space-xs;
+	}
 	.spacer--s {
 		height: $space-s;
 	}
@@ -19,6 +22,9 @@
 		height: $space-l;
 	}
 	@include phone {
+		.spacer--xs {
+			height: $space-xs-phone;
+		}
 		.spacer--s {
 			height: $space-s-phone;
 		}

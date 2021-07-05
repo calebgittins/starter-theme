@@ -5,7 +5,7 @@
             <form class="form--search" role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
                 <label class="screen-reader-text" for="s">' . __('Search',  'domain') . '</label>
                 <input type="search" value="' . esc_html(stripslashes_deep(get_search_query())) . '" name="s" id="s" placeholder="Search&hellip;" />
-                <button type="submit" id="searchsubmit"><span class="screen-reader-text">' . esc_attr__('Go', 'domain') . '</span><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="submit" id="searchsubmit" class="button--icon"><span class="screen-reader-text">' . esc_attr__('Go', 'domain') . '</span><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>        
         ';
         return $form;
