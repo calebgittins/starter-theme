@@ -357,7 +357,7 @@ input,form select,textarea,button{-webkit-appearance:none;border-radius:0}
 .mfp-img-mobile .mfp-bottom-bar:empty{padding:0}
 .mfp-img-mobile .mfp-counter{right:5px;top:3px}
 .mfp-img-mobile .mfp-close{top:0;right:0;width:35px;height:35px;line-height:35px;background:rgba(0,0,0,0.6);position:fixed;text-align:center;padding:0}
-}@media handheld,only screen and (max-width:767px){.spacer--xs{height:1rem}
+}@media handheld,only screen and (max-width:599px){.spacer--xs{height:1rem}
 .spacer--s{height:20px}
 .spacer--m{height:32px}
 .spacer--l{height:60px}

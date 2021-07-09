@@ -18,16 +18,10 @@
 			clear: both;
 		}
 	}
-// Media Queries
-	$small-phone-width: 399px; /* Up to 400px - SMALL PHONE */
-	$phone-width: 767px; /* Up to 768px - LARGER PHONE */
-	$tablet-width: 1199px; /* Up to 1200px - TABLET */
-	$laptop-width: 1919px; /* Up to 1920px - LAPTOP */
-	@mixin small-phone {
-		@media handheld, only screen and (max-width: #{$small-phone-width}) {
-			@content;
-		}
-	}
+// Media Queries	
+	$phone-width: 599px; /* 0px to 599px */
+	$tablet-width: 1199px; /* 600px to 1199px */
+	$laptop-width: 1599px; /* 1200px to 1599px */
 	@mixin phone {
 		@media handheld, only screen and (max-width: #{$phone-width}) {
 			@content;
