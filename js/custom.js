@@ -1,7 +1,7 @@
 (function($) {
 // Selectric
 	function selectricGforms() {
-		$('.gform_wrapper select').selectric({
+		$('.gform_wrapper select, .woocommerce-ordering select, .shop_table select').selectric({
 			disableOnMobile: false,
 			nativeOnMobile: false,
 			responsive: true,

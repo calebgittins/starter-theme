@@ -20,6 +20,13 @@
 			border-color: $color-primary;
 		}
 	}
+// Checkbox / radio
+	input[type="checkbox"],
+	input[type="radio"] {
+		line-height: inherit;
+		min-height: auto;
+		width: auto;
+	}
 // Textarea
 	textarea {
 		vertical-align: top;
