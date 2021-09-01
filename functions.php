@@ -1,7 +1,10 @@
 <?php
-// Admin Functions
+
+	// Admin Functions
 	// Load /functions/ folder
 		include('functions/loader.php');
+	//Required Plugins
+		require_once('functions/required.php');
 	// Add title tag support
 		add_theme_support( 'title-tag' );
 	// Add support for custom styles in WordPress editor
