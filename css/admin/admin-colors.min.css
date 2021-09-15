@@ -105,8 +105,3 @@ div#wp-responsive-toggle a:before{color:#f1f2f3}
 .mce-container.mce-menu .mce-menu-item:hover,.mce-container.mce-menu .mce-menu-item.mce-selected,.mce-container.mce-menu .mce-menu-item:focus,.mce-container.mce-menu .mce-menu-item-normal.mce-active,.mce-container.mce-menu .mce-menu-item-preview.mce-active{background:#0047ab}
 .wp-core-ui .button-primary{background-color:#0047ab;color:#fff}
 .wp-core-ui .button-primary:hover,.wp-core-ui .button-primary:focus,.wp-core-ui .button-primary:active{background-color:#046307;color:#fff}
-body .acf-fc-popup ul::before{display:none}
-body .acf-fc-popup ul:after{display:none}
-body .acf-fc-popup ul li{width:calc(100% / 4)}
-body .acf-fc-popup ul li a .acf-fc-popup-label{background-color:#313131;text-shadow:none;border:0;box-shadow:none}
-body .acf-fc-popup ul li a .acf-fc-popup-image{padding-bottom:56%}
