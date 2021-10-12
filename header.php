@@ -30,6 +30,7 @@
 			); ?>
 			<?php wp_nav_menu( $args ); ?>
 		</div>
+		<?php td_display_cart(); ?>
 	</div>
 </div>
 

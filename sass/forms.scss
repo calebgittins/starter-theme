@@ -5,6 +5,7 @@
 	button {
 		font-family: inherit;
 	}
+
 	input,
 	form select,
 	textarea {
@@ -20,6 +21,7 @@
 			border-color: $color-primary;
 		}
 	}
+
 // Checkbox / radio
 	input[type="checkbox"],
 	input[type="radio"] {
@@ -27,6 +29,7 @@
 		min-height: auto;
 		width: auto;
 	}
+
 // Textarea
 	textarea {
 		vertical-align: top;
@@ -34,6 +37,7 @@
 		line-height: 1.5em;
 		padding: 1em;
 	}
+
 // Submit
 	input[type="submit"],
 	button {
@@ -41,6 +45,7 @@
 		transition: $transition;
 		border: none;
 	}
+
 	@include tablet {
 		input,
 		form select,
@@ -118,6 +123,7 @@
 			width: 100%;
 		}
 	}
+
 // Gravity Forms - Hidden Elements
 	.hidden_label .gfield_label,
 	.gform_validation_container,
@@ -127,10 +133,12 @@
 	.gform_wrapper label.hidden_sub_label {
 		@include visually-hidden;
 	}
+
 // Gravity Forms - Footer
 	.gform_footer {
 		padding-top: $space-s;
 	}
+
 // Gravity Forms - Spinner
 	.gform_ajax_spinner {
 		margin-left: 1.25rem;
@@ -150,25 +158,32 @@
 			transform: rotate(360deg);
 		}
 	}
+
 // Gravity Forms - Custom Styled Fields
 // Gravity Forms - Checkbox and Radio Buttons
 	// Checkbox & Radio
 		.gfield_checkbox,
 		.gfield_radio,
-		.ginput_container_consent {
+		.ginput_container_consent,
+		.woocommerce-shipping-methods,
+		.wc_payment_methods,
+		.woocommerce-terms-and-conditions-wrapper {
 			input[type="checkbox"],
 			input[type="radio"] {
 				@include visually-hidden;
 			}
+
 			label {
 				position: relative;
 				padding-left: 2em;
 				min-height: 20px;
 				display: block;
 			}
-			li+li {
+			
+			li + li {
 				margin-top: 0.5em;
 			}
+
 			.custom-input {
 				position: absolute;
 				top: 4px;
@@ -178,7 +193,8 @@
 				cursor: pointer;
 				border: 1px solid $color-primary;
 			}
-			// SELECTED
+			
+			// Selected
 			input[type="checkbox"]:checked + label .custom-input,
 			input[type="radio"]:checked + label .custom-input {
 				background-color: $color-primary;
@@ -186,7 +202,8 @@
 		}
 	// Checkbox
 		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
-		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before {
+		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before,
+		.woocommerce-terms-and-conditions-wrapper input[type="checkbox"]:checked + label .custom-input:before {
 			content: '\f00c';
 			position: absolute;
 			top: 0;
@@ -198,10 +215,14 @@
 			line-height: 18px;
 		}
 	// Radio Button
-		.gfield_radio input[type="radio"]+label .custom-input {
+		.gfield_radio input[type="radio"]+label .custom-input,
+		.woocommerce-shipping-methods .custom-input,
+		.wc_payment_methods .custom-input {
 			border-radius: 100px;
 		}
-		.gfield_radio input[type="radio"]:checked+label .custom-input:before {
+		.gfield_radio input[type="radio"]:checked+label .custom-input:before,
+		.woocommerce-shipping-methods .custom-input:before,
+		.wc_payment_methods .custom-input:before {
 			content: '';
 			width: 10px;
 			height: 10px;
