@@ -553,3 +553,19 @@ body {
 
 
 }
+
+// Checkout
+
+	#ship-to-different-address {
+		margin-bottom: $space-s;
+	}
+
+	.woocommerce-checkout-review-order-table,
+	.wc_payment_methods,
+	.woocommerce-terms-and-conditions-wrapper {
+		margin-bottom: $space-s;
+	}
+
+	.woocommerce-privacy-policy-text {
+		margin-bottom: $space-xs;
+	}

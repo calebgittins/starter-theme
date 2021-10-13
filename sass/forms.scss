@@ -167,7 +167,8 @@
 		.ginput_container_consent,
 		.woocommerce-shipping-methods,
 		.wc_payment_methods,
-		.woocommerce-terms-and-conditions-wrapper {
+		.woocommerce-terms-and-conditions-wrapper,
+		#ship-to-different-address {
 			input[type="checkbox"],
 			input[type="radio"] {
 				@include visually-hidden;
@@ -203,7 +204,8 @@
 	// Checkbox
 		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
 		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before,
-		.woocommerce-terms-and-conditions-wrapper input[type="checkbox"]:checked + label .custom-input:before {
+		.woocommerce-terms-and-conditions-wrapper input[type="checkbox"]:checked + label .custom-input:before,
+		#ship-to-different-address input[type="checkbox"]:checked + label .custom-input:before {
 			content: '\f00c';
 			position: absolute;
 			top: 0;

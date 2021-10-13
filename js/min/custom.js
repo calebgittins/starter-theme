@@ -159,7 +159,7 @@
 
 // WooCommerce
 	function customWooFields() {
-		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label').append('<span class="custom-input"></span>');	
+		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .woocommerce-form__label-for-checkbox').append('<span class="custom-input"></span>');	
 	}
 
 	customWooFields();
@@ -167,22 +167,6 @@
 	$('body').on('updated_shipping_method country_to_state_changed updated_wc_div init_checkout updated_checkout', function(){
 	    customWooFields();
 	});
-
-	// $('body').on('country_to_state_changed', function(){
-	//     customWooFields();
-	// });
-
-	// $('body').on('updated_wc_div', function(){
-	//     customWooFields();
-	// });
-
-	// $('body').on('init_checkout', function() {
-	// 	customWooFields();
-	// });
-
-	// $('body').on('updated_checkout', function() {
-	// 	customWooFields();
-	// });
 
 })( jQuery );
 /*! modernizr 3.6.0 (Custom Build) | MIT *
