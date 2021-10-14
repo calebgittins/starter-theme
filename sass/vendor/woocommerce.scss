@@ -4,6 +4,10 @@
 .woocommerce-error,
 .woocommerce-info {
 	@extend .message;
+
+	a:not(.button) {
+		text-decoration: underline;
+	}
 }
 
 .woocommerce-error {
@@ -21,6 +25,7 @@
 
 		.button {
 			order: 2;
+			flex-shrink: 0;
 		}
 	}
 }
@@ -556,6 +561,14 @@ body {
 
 // Checkout
 
+	.checkout_coupon {
+		margin-bottom: $space-s;
+
+		p {
+			margin-bottom: 1.5em;
+		}
+	}
+
 	#ship-to-different-address {
 		margin-bottom: $space-s;
 	}
@@ -568,4 +581,12 @@ body {
 
 	.woocommerce-privacy-policy-text {
 		margin-bottom: $space-xs;
+	}
+
+	.checkout_coupon {
+		margin-bottom: $space-s;
+
+		p {
+			margin-bottom: 1.5em;
+		}
 	}
