@@ -159,7 +159,7 @@
 
 // WooCommerce
 	function customWooFields() {
-		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .woocommerce-form__label-for-checkbox').append('<span class="custom-input"></span>');	
+		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .custom-checkbox label').append('<span class="custom-input"></span>');	
 	}
 
 	customWooFields();

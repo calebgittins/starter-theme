@@ -10,8 +10,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+
 // Headings
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		font-weight: 700;
 		color: $color-default;
 		font-family: $font-heading;
@@ -183,10 +184,9 @@ body {
 		&:before {
 			content: "\f05a";
 			position: absolute;
-			top: 1.1em;
+			top: 1em;
 			left: 1em;
-			font-size: 1em;
-			line-height: 1em;
+			font-size: 1em;			
 			font-family: $font-icon;
 		}
 	}

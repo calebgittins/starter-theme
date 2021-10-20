@@ -51,6 +51,7 @@
 	}
 	a.button,
 	form button,
+	button.button,
 	input[type="submit"],
 	input[type="button"] {
 		@extend %button;

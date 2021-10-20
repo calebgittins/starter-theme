@@ -1,10 +1,23 @@
-// Forms
+// Global 
+
 	input,
 	form select,
 	textarea,
 	button {
 		font-family: inherit;
 	}
+
+// Labels / Legends
+
+	label {
+		font-weight: 700;
+	}
+
+	legend {
+		@extend .h3;
+	}
+
+// Input types
 
 	input,
 	form select,
@@ -168,7 +181,8 @@
 		.woocommerce-shipping-methods,
 		.wc_payment_methods,
 		.woocommerce-terms-and-conditions-wrapper,
-		#ship-to-different-address {
+		#ship-to-different-address,
+		.custom-checkbox {
 			input[type="checkbox"],
 			input[type="radio"] {
 				@include visually-hidden;
@@ -205,7 +219,8 @@
 		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
 		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before,
 		.woocommerce-terms-and-conditions-wrapper input[type="checkbox"]:checked + label .custom-input:before,
-		#ship-to-different-address input[type="checkbox"]:checked + label .custom-input:before {
+		#ship-to-different-address input[type="checkbox"]:checked + label .custom-input:before, 
+		.custom-checkbox input[type="checkbox"]:checked + label .custom-input:before {
 			content: '\f00c';
 			position: absolute;
 			top: 0;
@@ -222,9 +237,10 @@
 		.wc_payment_methods .custom-input {
 			border-radius: 100px;
 		}
+
 		.gfield_radio input[type="radio"]:checked+label .custom-input:before,
-		.woocommerce-shipping-methods .custom-input:before,
-		.wc_payment_methods .custom-input:before {
+		.woocommerce-shipping-methods input[type="radio"]:checked+label .custom-input:before,
+		.wc_payment_methods input[type="radio"]:checked+label .custom-input:before {
 			content: '';
 			width: 10px;
 			height: 10px;
@@ -234,7 +250,7 @@
 			left: 50%;
 			margin-left: -5px;
 			margin-top: -5px;
-			background: $color-white;
+			background-color: $color-white;
 		}
 
 // Inline List
