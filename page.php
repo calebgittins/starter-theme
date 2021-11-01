@@ -3,7 +3,7 @@
 		<?php if ( get_field('td_page_content') && !post_password_required() ) : ?>
         	<?php get_template_part('inc/flexible'); ?>
         <?php else: ?>
-        	<div class="wrap wysiwyg">
+        	<div class="wrap">
         		<?php the_content(); ?>
         	</div>
         <?php endif; ?>

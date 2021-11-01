@@ -10,45 +10,53 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+
 // Headings
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		font-weight: 700;
 		color: $color-default;
 		font-family: $font-heading;
 	}
 	h1, .h1 {
-		font-size: 6.25rem; // 100
+		font-size: 5rem; // 80
 		line-height: 1.4em;
-		margin-bottom: 0.5em;
+		margin-bottom: 1.4em;
 	}
 	h2, .h2 {
-		font-size: 5rem; // 80
+		font-size: 3rem; // 48
 		line-height: 1.348em;
-		margin-bottom: 0.913em;
+		margin-bottom: 1em;
 	}
 	h3, .h3 {
-		font-size: 3.75rem; // 60 
+		font-size: 2em; // 32
 		line-height: 1.421em;
-		margin-bottom: 1.105em;
+		margin-bottom: 1em;
 	}
 	h4, .h4 {
-		font-size: 2.5rem; // 40
+		font-size: 1.5rem; // 24
 		line-height: 1.444em;
-		margin-bottom: 1.167em;
+		margin-bottom: 1em;
 	}
 	h5, .h5 {
 		font-size: 1.25rem; // 20
 		line-height: 1.5em;
-		margin-bottom: 1.313em;
+		margin-bottom: 1em;
 	}
 	h6, .h6 {
 		font-size: 1rem; // 16
 		line-height: 1.571em;
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
 	}
-// Small
-	.small, .body--small {
+
+// Body Variations
+	.body--small {
 		font-size: 0.88rem;
+	}
+
+// Small
+	.small,
+	small {
+		font-size: 0.75rem;
 		line-height: 1.4em;
 	}
 	sup,
@@ -169,24 +177,33 @@ body {
 		padding: 1em 1em 1em 3em;
 		font-size: 1rem;
 		font-weight: 400;
+		background-color: $color-primary;
+		@extend .is-dark;
+		margin-bottom: $space-s;
 
 		&:before {
 			content: "\f05a";
 			position: absolute;
-			top: 1.1em;
+			top: 1em;
 			left: 1em;
-			font-size: 1em;
-			line-height: 1em;
+			font-size: 1em;			
 			font-family: $font-icon;
 		}
 	}
 
 // Message - Success
-	.message--success:before {
-		content: "\f058";
+	.message--success {
+		background-color: $color-success;
+			&:before {
+			content: "\f058";
+		}
 	}
 
 // Message - Error
-	.message--error:before {
-		content: "\f06a";
+	.message--error {
+		background-color: $color-error;
+
+		&:before {
+			content: "\f06a";
+		}
 	}

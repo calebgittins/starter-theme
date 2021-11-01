@@ -43,9 +43,15 @@
 			text-decoration: none;
 			background-color: $color-secondary;
 		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;			
+		}
 	}
 	a.button,
 	form button,
+	button.button,
 	input[type="submit"],
 	input[type="button"] {
 		@extend %button;
@@ -108,7 +114,7 @@
 		z-index: 4;
 		margin: 0 auto;
 		width: 90%;
-		max-width: 75rem; // 1200
+		max-width: 90rem; // 1440
 	}
 
 	.wrap--small {

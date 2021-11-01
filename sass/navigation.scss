@@ -129,3 +129,14 @@
 			padding: 40px 0;
 		}
 	}
+
+// Pagination
+
+.nav--pagination {
+	display: flex;
+	justify-content: center;
+
+	li + li {
+		margin-left: 1em;
+	}
+}

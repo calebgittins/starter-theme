@@ -1,7 +1,7 @@
 (function($) {
 // Selectric
 	function selectricGforms() {
-		$('.gform_wrapper select').selectric({
+		$('.gform_wrapper select, .product select, .woocommerce-ordering select').selectric({
 			disableOnMobile: false,
 			nativeOnMobile: false,
 			responsive: true,
@@ -156,4 +156,16 @@
 	$(document).bind('gform_post_render', function() {
 		selectricGforms();
 	});
+
+// WooCommerce
+	function customWooFields() {
+		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .custom-checkbox label').append('<span class="custom-input"></span>');	
+	}
+
+	customWooFields();
+
+	$('body').on('updated_shipping_method country_to_state_changed updated_wc_div init_checkout updated_checkout', function(){
+	    customWooFields();
+	});
+
 })( jQuery );
