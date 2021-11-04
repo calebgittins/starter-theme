@@ -9,7 +9,7 @@
 			<div class="article__media">
 				<?php if ( get_field('td_post_image') ) : $image = get_field('td_post_image'); ?>
 				<div class="article__image has-spinner">
-					<div class="spinner"></div>
+					<div class="default-spinner"></div>
 					<img class="b-lazy" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 				</div>
 				<?php endif; ?>
