@@ -10,14 +10,7 @@
 		height: 100%;
 		display: block;
 	}
-// Clearfix
-	@mixin clearfix {
-		&:after {
-			content: '';
-			display: table;
-			clear: both;
-		}
-	}
+
 // Media Queries	
 	$phone-width: 599px; /* 0px to 599px */
 	$tablet-width: 1199px; /* 600px to 1199px */
@@ -38,14 +31,14 @@
 		}
 	}
 // Custom Media Queries
-	// Max Width
+	// Max Width eg @include max-width(1200px)
 		@mixin max-width($width) {
 			@media handheld,
 			only screen and (max-width: #{$width}) {
 				@content;
 			}
 		}
-	// Min Width
+	// Min Width eg @include min-width(1200px)
 		@mixin min-width($width) {
 			@media handheld,
 			only screen and (min-width: #{$width}) {
@@ -56,12 +49,8 @@
 	@mixin wrap-link {
 		overflow-wrap: break-word;
 		word-wrap: break-word;
-		-ms-word-break: break-all;
 		word-break: break-all;
 		word-break: break-word;
-		-ms-hyphens: auto;
-		-moz-hyphens: auto;
-		-webkit-hyphens: auto;
 		hyphens: auto;
 	}
 // Placeholder

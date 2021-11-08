@@ -24,27 +24,7 @@
 	.is-hidden {
 		display: none;
 	}
-	.va {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.inline-block {
-		display: inline-block;
-		zoom: 1;
-		*display: inline;
-	}
-	.cf {
-		*zoom: 1;
-	}
-	.cf:before,
-	.cf:after {
-		content: '';
-		display: table;
-	}
-	.cf:after {
-		clear: both;
-	}
+
 // Flexbox
 	.flex {
 		display: flex;

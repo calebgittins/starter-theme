@@ -36,8 +36,6 @@
 		$('.offscreen').toggleClass('offscreen--active');
 		$('body').toggleClass('body--offscreen-active');
 	});
-// Superfish dropdown
-	$('.nav--primary').superfish();
 // Close nav on anchor click
 	$('.offscreen a[href^="#"]').click(function (event) {
 		$('.js-nav-toggle').trigger( "click" );
@@ -110,20 +108,6 @@
 // Equal Heights
 	$('.js-match-height').matchHeight();
 
-	$('.gfield').matchHeight({
-		property: 'min-height'
-	});
-// Sticky header
-	var headerHeight = $('.header').outerHeight();
-	if ($(window).scrollTop() >= headerHeight) {
-		$('.header').addClass('header--sticky');
-	}
-	$(window).scroll(function() {
-		var sticky = $('.header'),
-			scroll = $(window).scrollTop();
-		if (scroll >= headerHeight) sticky.addClass('header--sticky');
-		else sticky.removeClass('header--sticky');
-	});
 // Accordion
 	$('.accordion__item__content').hide(); // Close all accordions
 	$('.js-accordion-toggle').click(function(e) {
