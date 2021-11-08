@@ -1,5 +1,5 @@
 // Spinner
-	.spinner {
+	.default-spinner {
 		height: 64px;
 		width: 64px;
 		position: absolute;
@@ -15,21 +15,21 @@
 		border-radius: 100px;
 	}
 
-	.spinner--dark {
+	.default-spinner--dark {
 		border-left: 2px solid rgba(0,0,0,.15);
 		border-right: 2px solid rgba(0,0,0,.15);
 		border-bottom: 2px solid rgba(0,0,0,.15);
 		border-top: 2px solid rgba(0,0,0,.8);
 	}
 
-	.spinner--medium {
+	.default-spinner--medium {
 		width: 48px;
 		height: 48px;
 		margin-top: -24px;
 		margin-left: -24px;
 	}
 
-	.spinner--small {
+	.default-spinner--small {
 		width: 24px;
 		height: 24px;
 		margin-top: -12px;
@@ -44,7 +44,7 @@
 		}
 	}
 	@include phone {
-		.spinner {
+		.default-spinner {
 			width: 24px;
 			height: 24px;
 			margin-top: -12px;

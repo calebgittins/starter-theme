@@ -27,7 +27,7 @@
 	});
 	$('.js-slick-single img').load(function() {
 		$(this).addClass('slick-loaded');
-		$(this).prev('.spinner').fadeOut().remove();
+		$(this).prev('.default-spinner').fadeOut().remove();
 	});
 // Toggle offscreen menu
 	$('.js-nav-toggle').click(function(e) {
@@ -85,7 +85,7 @@
 		closeOnContentClick: false,
 		closeOnBgClick: false,
 		// removalDelay: 800, // Delay removal for animation
-		tLoading: '<div class="spinner"></div>',
+		tLoading: '<div class="default-spinner"></div>',
 	});
 // Infinite Scroll
 	// Infinite Scroll - Settings
@@ -133,7 +133,7 @@
 		loadInvisible: true,
 		offset: 200,
 		success: function(element){
-			$(element).prev('.spinner').fadeOut().remove();
+			$(element).prev('.default-spinner').fadeOut().remove();
 		}
 	});
 // Gravity Forms
