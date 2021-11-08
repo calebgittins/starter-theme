@@ -87,27 +87,8 @@
 		// removalDelay: 800, // Delay removal for animation
 		tLoading: '<div class="default-spinner"></div>',
 	});
-// Infinite Scroll
-	// Infinite Scroll - Settings
-		$container = $('.js-infinite-parent');
-		$container.infiniteScroll({
-			path: '.nav--pagination a',
-			append: '.js-infinite-item',
-			history: false,
-			checkLastPage: true,
-			scrollThreshold: 200
-		});
-	// Infinite Scroll - Loaded
-		$container.on( 'append.infiniteScroll', function( event, response, path, items ) {
-			$('.js-match-height').matchHeight();
-		});
-	// Infinite Scroll - Last Page
-		$container.on( 'last.infiniteScroll', function( event, response, path ) {
-			$('.nav-pagination').fadeOut().remove();
-		});
 // Equal Heights
 	$('.js-match-height').matchHeight();
-
 // Accordion
 	$('.accordion__item__content').hide(); // Close all accordions
 	$('.js-accordion-toggle').click(function(e) {
@@ -140,7 +121,6 @@
 	$(document).bind('gform_post_render', function() {
 		selectricGforms();
 	});
-
 // WooCommerce
 	function customWooFields() {
 		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .custom-checkbox label').append('<span class="custom-input"></span>');	
@@ -151,5 +131,4 @@
 	$('body').on('updated_shipping_method country_to_state_changed updated_wc_div init_checkout updated_checkout', function(){
 	    customWooFields();
 	});
-
 })( jQuery );
