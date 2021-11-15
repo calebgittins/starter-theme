@@ -1,24 +1,18 @@
-// Global 
-
+// Global
 	input,
 	form select,
 	textarea,
 	button {
 		font-family: inherit;
 	}
-
 // Labels / Legends
-
 	label {
 		font-weight: 700;
 	}
-
 	legend {
 		@extend .h3;
 	}
-
 // Input types
-
 	input,
 	form select,
 	textarea {
@@ -29,12 +23,10 @@
 		border: 1px solid $color-light;
 		padding: 0 1em;
 		width: 100%;
-
 		&:focus {
 			border-color: $color-primary;
 		}
 	}
-
 // Checkbox / radio
 	input[type="checkbox"],
 	input[type="radio"] {
@@ -42,7 +34,6 @@
 		min-height: auto;
 		width: auto;
 	}
-
 // Textarea
 	textarea {
 		vertical-align: top;
@@ -50,7 +41,6 @@
 		line-height: 1.5em;
 		padding: 1em;
 	}
-
 // Submit
 	input[type="submit"],
 	button {
@@ -58,7 +48,6 @@
 		transition: $transition;
 		border: none;
 	}
-
 	@include tablet {
 		input,
 		form select,
@@ -68,19 +57,18 @@
 			border-radius: 0;
 		}
 	}
-
 // Gravity Forms
 	.gfield_required {
 		display: inline-block;
 		margin-left: 0.25rem;
 	}
 	.gform_fields {
-		display: flex;		
+		display: flex;
 		flex-wrap: wrap;
 		margin-left: -$space-s;
 		margin-bottom: 0;
 	}
-	.gfield {		
+	.gfield {
 		width: 100%;
 		padding-left: $space-s;
 		padding-bottom: $space-s;
@@ -108,7 +96,6 @@
 	.gfield--width-half {
 		width: 50%;
 	}
-
 	.gf_left_third,
 	.gf_middle_third,
 	.gf_right_third,
@@ -136,7 +123,6 @@
 			width: 100%;
 		}
 	}
-
 // Gravity Forms - Hidden Elements
 	.hidden_label .gfield_label,
 	.gform_validation_container,
@@ -146,12 +132,10 @@
 	.gform_wrapper label.hidden_sub_label {
 		@include visually-hidden;
 	}
-
 // Gravity Forms - Footer
 	.gform_footer {
 		padding-top: $space-s;
 	}
-
 // Gravity Forms - Spinner
 	.gform_ajax_spinner {
 		margin-left: 1.25rem;
@@ -162,7 +146,6 @@
 		width: 30px;
 		height: 30px;
 	}
-
 	@keyframes spinner {
 		0% {
 			transform: rotate(0deg);
@@ -171,7 +154,6 @@
 			transform: rotate(360deg);
 		}
 	}
-
 // Gravity Forms - Custom Styled Fields
 // Gravity Forms - Checkbox and Radio Buttons
 	// Checkbox & Radio
@@ -187,18 +169,15 @@
 			input[type="radio"] {
 				@include visually-hidden;
 			}
-
 			label {
 				position: relative;
 				padding-left: 2em;
 				min-height: 20px;
 				display: block;
 			}
-			
 			li + li {
 				margin-top: 0.5em;
 			}
-
 			.custom-input {
 				position: absolute;
 				top: 4px;
@@ -208,7 +187,6 @@
 				cursor: pointer;
 				border: 1px solid $color-primary;
 			}
-			
 			// Selected
 			input[type="checkbox"]:checked + label .custom-input,
 			input[type="radio"]:checked + label .custom-input {
@@ -219,7 +197,7 @@
 		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
 		.ginput_container_consent input[type="checkbox"]:checked + label .custom-input:before,
 		.woocommerce-terms-and-conditions-wrapper input[type="checkbox"]:checked + label .custom-input:before,
-		#ship-to-different-address input[type="checkbox"]:checked + label .custom-input:before, 
+		#ship-to-different-address input[type="checkbox"]:checked + label .custom-input:before,
 		.custom-checkbox input[type="checkbox"]:checked + label .custom-input:before {
 			content: '\f00c';
 			position: absolute;
@@ -237,7 +215,6 @@
 		.wc_payment_methods .custom-input {
 			border-radius: 100px;
 		}
-
 		.gfield_radio input[type="radio"]:checked+label .custom-input:before,
 		.woocommerce-shipping-methods input[type="radio"]:checked+label .custom-input:before,
 		.wc_payment_methods input[type="radio"]:checked+label .custom-input:before {
@@ -252,34 +229,31 @@
 			margin-top: -5px;
 			background-color: $color-white;
 		}
-
 // Inline List
-
-.gf_list_inline {
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: -1rem;
-	margin-bottom: -1rem;
-
-	li {
-		flex-shrink: 0;
-		padding-left: 1rem;
-		padding-bottom: 1rem;
+	.gf_list_inline {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -1rem;
+		margin-bottom: -1rem;
+		li {
+			flex-shrink: 0;
+			padding-left: 1rem;
+			padding-bottom: 1rem;
+		}
+		li + li {
+			margin-top: 0;
+		}
 	}
-
-	li + li {
-		margin-top: 0;
-	}
-}
-
 // Gravity Forms - Datepicker
+	div.ui-datepicker {
+		margin: 0;
+	}
 	.ginput_container_date,
 	.custom-datepicker {
 		position: relative;
-
 		&:before {
 			position: absolute;
-			z-index: 1;			
+			z-index: 1;
 			right: 1em;
 			content: '\f133';
 			top: 50%;
@@ -287,15 +261,13 @@
 			font-family: $font-icon;
 			color: $color-primary;
 		}
-		
 		input {
 			position: relative;
 			z-index: 5;
 			background-color: transparent;
 		}
 	}
-// Gravity Forms - Calendar 
-
+// Gravity Forms - Calendar
 // Gravity Forms - Errors
 	.validation_error,
 	.gform_submission_error {
@@ -326,11 +298,9 @@
 	.form--search {
 		display: flex;
 		position: relative;
-
 		input {
 			padding-right: 4em;
 		}
-
 		button {
 			position: absolute;
 			top: 50%;
@@ -338,48 +308,39 @@
 			right: 1em;
 			color: $color-primary;
 		}
-
 		button:hover {
 			background-color: transparent;
 		}
 	}
-
 // File upload
 	.ginput_container_fileupload {
 		border: 2px dashed;
 		padding: $space-m;
 		text-align: center;
 	}
-
 	.gform_drop_area button {
 		margin: $space-xs 0;
 	}
-
 	.gform_drop_instructions,
 	.gform_fileupload_rules {
 		display: block;
 	}
-
 // List field
 	.gfield_list_group_item {
 		margin-bottom: 1em;
 	}
-
 	.gfield_list_group + .gfield_list_group {
 		margin-top: 2em;
 	}
-
 // Time field
 	.ginput_complex {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-
 		.hour_minute_colon {
 			margin: 0 .5em;
 			border: 1px solid transparent;
 		}
-
 		.gfield_time_ampm {
 			margin-left: .5em;
 		}

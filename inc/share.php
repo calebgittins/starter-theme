@@ -1,5 +1,5 @@
 <div class="share">
-	<ul class="list--share">	
+	<ul class="list--share">
 		<li><h6 class="share__heading">Share</h6></li>
 		<li><a class="sharer" data-sharer="facebook" data-url="<?php the_permalink(); ?>"><i class="fa fa-facebook"></i></a></li>
 		<li><a class="sharer" data-sharer="twitter" data-title="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a></li>
