@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<!--[if lt IE 3]>
+	░▀▀█▀▀░▒█░▒█░▀█▀░▒█▀▀▄░▀▀█▀▀░▒█▀▀▀░▒█▀▀▀░▒█▄░▒█░░░▒█▀▀▄░▀█▀░▒█▀▀█░▀█▀░▀▀█▀▀░█▀▀▄░▒█░░░
+	░░▒█░░░▒█▀▀█░▒█░░▒█▄▄▀░░▒█░░░▒█▀▀▀░▒█▀▀▀░▒█▒█▒█░░░▒█░▒█░▒█░░▒█░▄▄░▒█░░░▒█░░▒█▄▄█░▒█░░░
+	░░▒█░░░▒█░▒█░▄█▄░▒█░▒█░░▒█░░░▒█▄▄▄░▒█▄▄▄░▒█░░▀█░░░▒█▄▄█░▄█▄░▒█▄▄▀░▄█▄░░▒█░░▒█░▒█░▒█▄▄█
+														Site by: thirteendigital.com.au ⚡
+<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
