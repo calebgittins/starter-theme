@@ -30,7 +30,7 @@
 // START Editing Project Variables.
 // Project related.
 var project = 'StarterTheme'; // Project Name.
-var projectURL = 'starter.local'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
+var projectURL = 'starter.site'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
 var productURL = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Style related.
@@ -87,7 +87,7 @@ const AUTOPREFIXER_BROWSERS = [
 var gulp = require('gulp'); // Gulp of-course
 
 // CSS related plugins.
-var sass = require('gulp-sass'); // Gulp pluign for Sass compilation.
+var sass = require('gulp-sass'); // Gulp plugin for Sass compilation.
 var minifycss = require('gulp-uglifycss'); // Minifies CSS files.
 var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic.
 var mmq = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
@@ -118,20 +118,9 @@ var reload = browserSync.reload; // For manual browser reload.
  */
 gulp.task('browser-sync', function() {
     browserSync.init({
-
-        // For more options
-        // @link http://www.browsersync.io/docs/options/
-
-        // Project URL.
         proxy: projectURL,
         reloadOnRestart: false,
-        // Inject CSS changes.
-        // Commnet it to reload browser for every CSS change.
         injectChanges: true,
-
-        // Use a specific port (instead of the one auto-detected by Browsersync).
-        // port: 7000,
-
     });
 });
 

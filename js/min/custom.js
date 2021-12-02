@@ -27,7 +27,7 @@
 	});
 	$('.js-slick-single img').load(function() {
 		$(this).addClass('slick-loaded');
-		$(this).prev('.spinner').fadeOut().remove();
+		$(this).prev('.default-spinner').fadeOut().remove();
 	});
 // Toggle offscreen menu
 	$('.js-nav-toggle').click(function(e) {
@@ -85,29 +85,10 @@
 		closeOnContentClick: false,
 		closeOnBgClick: false,
 		// removalDelay: 800, // Delay removal for animation
-		tLoading: '<div class="spinner"></div>',
+		tLoading: '<div class="default-spinner"></div>',
 	});
-// Infinite Scroll
-	// Infinite Scroll - Settings
-		$container = $('.js-infinite-parent');
-		$container.infiniteScroll({
-			path: '.nav--pagination a',
-			append: '.js-infinite-item',
-			history: false,
-			checkLastPage: true,
-			scrollThreshold: 200
-		});
-	// Infinite Scroll - Loaded
-		$container.on( 'append.infiniteScroll', function( event, response, path, items ) {
-			$('.js-match-height').matchHeight();
-		});
-	// Infinite Scroll - Last Page
-		$container.on( 'last.infiniteScroll', function( event, response, path ) {
-			$('.nav-pagination').fadeOut().remove();
-		});
 // Equal Heights
 	$('.js-match-height').matchHeight();
-
 // Accordion
 	$('.accordion__item__content').hide(); // Close all accordions
 	$('.js-accordion-toggle').click(function(e) {
@@ -133,14 +114,13 @@
 		loadInvisible: true,
 		offset: 200,
 		success: function(element){
-			$(element).prev('.spinner').fadeOut().remove();
+			$(element).prev('.default-spinner').fadeOut().remove();
 		}
 	});
 // Gravity Forms
 	$(document).bind('gform_post_render', function() {
 		selectricGforms();
 	});
-
 // WooCommerce
 	function customWooFields() {
 		$('.woocommerce-shipping-methods label, .wc_payment_methods label, .woocommerce-terms-and-conditions-wrapper label, .custom-checkbox label').append('<span class="custom-input"></span>');	
@@ -151,7 +131,6 @@
 	$('body').on('updated_shipping_method country_to_state_changed updated_wc_div init_checkout updated_checkout', function(){
 	    customWooFields();
 	});
-
 })( jQuery );
 /*! modernizr 3.6.0 (Custom Build) | MIT *
  * https://modernizr.com/download/?-audio-backgroundsize-canvas-cookies-cssanimations-csscalc-csscolumns-cssgradients-cssgrid_cssgridlegacy-cssvhunit-cssvwunit-flexbox-ie8compat-inlinesvg-objectfit-supports-svg-svgasimg-touchevents-video-setclasses !*/

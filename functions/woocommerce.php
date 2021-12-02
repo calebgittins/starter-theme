@@ -1,5 +1,14 @@
 <?php
 
+// Check if WooCommerce is activated
+    if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+        function is_woocommerce_activated() {
+            if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+        }
+    }
+
+if(is_woocommerce_activated()) {
+
 // WooCommerce
 	add_theme_support( 'woocommerce' );
 
@@ -150,3 +159,5 @@
         $fragments['a.dynamic-cart'] = ob_get_clean();
         return $fragments;
     }
+
+}
