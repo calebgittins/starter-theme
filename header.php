@@ -24,7 +24,7 @@
 		<?php if ( get_field('td_logo','options') ) : $image = get_field('td_logo','options'); ?>
 			<div class="header__logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="link--cover" aria-label="View the home page"></a>
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" />
+				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
 			</div>
 		<?php endif; ?>
 		<?php td_display_hamburger(); ?>
