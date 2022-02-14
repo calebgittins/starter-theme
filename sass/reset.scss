@@ -76,6 +76,12 @@ video {
     box-sizing: border-box;
 }
 
+html{
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
 ul,
 ol {
     list-style: none;
