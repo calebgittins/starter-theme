@@ -156,3 +156,21 @@
 		background-color: $color-white;
 		padding: $space-s;
 	}
+// Skip to content
+	a.skip-to-content-link {
+		color: $color-white;
+		background: $color-secondary;
+		left: 50%;
+		position: absolute;
+		z-index: 3000;
+		transform: translateY(-100%);
+		transition: transform 0.3s;
+		height: 50px;
+		padding: 8px 30px;
+		width: 180px;
+		text-align: center;
+		margin-left: -60px;
+	}
+	.skip-to-content-link:focus {
+		transform: translateY(0%);
+	}

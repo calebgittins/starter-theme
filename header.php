@@ -18,7 +18,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<a class="skip-to-content-link" href="#main">Skip to content</a>
 <div class="header">
 	<div class="wrap">
 		<?php if ( get_field('td_logo','options') ) : $image = get_field('td_logo','options'); ?>
@@ -35,7 +35,7 @@
 				'theme_location' => 'menu-header'
 			); ?>
 			<?php wp_nav_menu( $args ); ?>
-		</div>		
+		</div>
 	</div>
 </div>
 
