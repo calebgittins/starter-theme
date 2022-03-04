@@ -30,7 +30,7 @@
 		return $path;
 	}
 	add_filter( 'acf-flexible-content-preview.images_path', 'td_acf_image_path' );
-// Limit Acf Wysiwyg
+// Limit WYSIWYG field
 	add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
 	function my_toolbars( $toolbars ) {
 		$toolbars['Very Basic' ] = array();

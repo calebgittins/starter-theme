@@ -15,7 +15,7 @@
 				<?php endif; ?>
 			</div>
 			<div class="article__main">
-				<?php if ( get_field('td_page_post') && !post_password_required() ) : ?>
+				<?php if ( get_field('td_post_content') && !post_password_required() ) : ?>
 		        	<?php echo get_field('td_post_content'); ?>
 		        <?php else: ?>
 		        	<div class="wysiwyg">

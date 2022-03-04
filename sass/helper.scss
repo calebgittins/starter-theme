@@ -8,7 +8,7 @@
 	.nav a {
 		display: block;
 	}
-	ul.nav--stacked {
+	.nav--stacked {
 		display: block;
 	}
 // Helper
@@ -61,6 +61,41 @@
 	.grid__item--sixth {
 		width: 16.667%;
 	}
+// Grid - 12 column 
+	.grid__item--one {
+		width: 8.333%;
+	}
+	.grid__item--two {
+		width: 16.667%;
+	}
+	.grid__item--three {
+		width: 25%;
+	}
+	.grid__item--four {
+		width: 33.333%;
+	}
+	.grid__item--five {
+		width: 41.667%;
+	}
+	.grid__item--six {
+		width: 50%;
+	}
+	.grid__item--seven {
+		width: 58.333%;
+	}
+	.grid__item--eight {
+		width: 66.667%;
+	}
+	.grid__item--nine {
+		width: 75%;
+	}
+	.grid__item--ten {
+		width: 83.333%;
+	}
+	.grid__item--eleven {
+		width: 91.667%;
+	}
+// Grid - No spacing
 	.grid--tight {
 		margin-left: 0;
 		

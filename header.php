@@ -40,3 +40,5 @@
 </div>
 
 <?php get_template_part('inc/hero'); ?>
+
+<main id="main">

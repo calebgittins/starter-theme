@@ -30,7 +30,7 @@ ul,ol{list-style:none}
 .nav{display:-moz-box;display:-ms-flexbox;display:flex}
 .nav li{position:relative}
 .nav a{display:block}
-ul.nav--stacked{display:block}
+.nav--stacked{display:block}
 .text--center{text-align:center}
 .text--right{text-align:right}
 .is-relative{position:relative}
@@ -45,6 +45,17 @@ ul.nav--stacked{display:block}
 .grid__item--fourth{width:25%}
 .grid__item--fifth{width:20%}
 .grid__item--sixth{width:16.667%}
+.grid__item--one{width:8.333%}
+.grid__item--two{width:16.667%}
+.grid__item--three{width:25%}
+.grid__item--four{width:33.333%}
+.grid__item--five{width:41.667%}
+.grid__item--six{width:50%}
+.grid__item--seven{width:58.333%}
+.grid__item--eight{width:66.667%}
+.grid__item--nine{width:75%}
+.grid__item--ten{width:83.333%}
+.grid__item--eleven{width:91.667%}
 .grid--tight{margin-left:0}
 .grid--tight .grid__item,.grid--tight .u-columns .col-1,.u-columns .grid--tight .col-1,.grid--tight .u-columns .col-2,.u-columns .grid--tight .col-2{padding-left:0}
 .has-spinner{position:relative}
@@ -206,6 +217,8 @@ img,iframe{vertical-align:top;max-width:100%}
 .header .wrap{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-moz-box-align:center;-ms-flex-align:center;align-items:center}
 .footer{padding:5rem 0}
 .popup{position:relative;width:80%;max-width:75rem;margin:7.5rem auto;background-color:#fff;padding:2.5rem}
+a.skip-to-content-link{color:#fff;background:#046307;left:50%;position:absolute;z-index:3000;transform:translateY(-100%);transition:transform .3s;height:50px;padding:8px 30px;width:180px;text-align:center;margin-left:-60px}
+.skip-to-content-link:focus{transform:translateY(0)}
 body,html{font-size:16px;line-height:1.75em}
 body{font-family:"Open Sans",sans-serif;color:#313131;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,h5,h6,.h1,.h2,.product_title,.h3,legend,.woocommerce-loop-product__title,.cart_totals h2,.h4,.h5,.h6{font-weight:700;color:#313131;font-family:"Open Sans",sans-serif}

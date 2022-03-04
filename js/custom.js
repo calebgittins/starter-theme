@@ -1,6 +1,6 @@
 (function($) {
 // Selectric
-	function selectricGforms() {
+	function initSelectric() {
 		$('.gform_wrapper select, .product select, .woocommerce-ordering select').selectric({
 			disableOnMobile: false,
 			nativeOnMobile: false,
@@ -8,7 +8,7 @@
 			maxHeight: 264
 		});
 	}
-	selectricGforms();
+	initSelectric();
 // Slick - Global settings
 	var slick_previous = '<button class="slick-arrow--previous"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="screen-reader-text">Previous</span></button>';
 	var slick_next     = '<button class="slick-arrow--next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="screen-reader-text">Next</span></button>';
@@ -84,7 +84,6 @@
 		closeBtnInside: true,
 		closeOnContentClick: false,
 		closeOnBgClick: false,
-		// removalDelay: 800, // Delay removal for animation
 		tLoading: '<div class="default-spinner"></div>',
 	});
 // Equal Heights
