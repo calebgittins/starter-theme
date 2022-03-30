@@ -134,6 +134,8 @@
 	}
 // Gravity Forms - Footer
 	.gform_footer {
+		position: relative;
+		z-index: 12;
 		padding-top: $space-s;
 	}
 // Gravity Forms - Spinner
