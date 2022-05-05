@@ -23,6 +23,11 @@
 			'parent_slug' => 'options-settings',
 			'capability'  => 'manage_options'
 		));
+		acf_add_options_sub_page(array(
+			'title'       => '404 Page',
+			'parent_slug' => 'options-settings',
+			'capability'  => 'manage_options'
+		));
 	}
 // Flexible Preview Plugin
 	function td_acf_image_path() {
