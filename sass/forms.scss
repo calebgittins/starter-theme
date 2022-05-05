@@ -194,6 +194,12 @@
 			input[type="radio"]:checked + label .custom-input {
 				background-color: $color-primary;
 			}
+			// Focus
+			input[type="checkbox"]:focus + label .custom-input,
+			input[type="radio"]:focus + label .custom-input {
+				outline: 5px auto Highlight;
+				outline: 5px auto -webkit-focus-ring-color;
+			}
 		}
 	// Checkbox
 		.gfield_checkbox input[type="checkbox"]:checked + label .custom-input:before,
