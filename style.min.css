@@ -350,6 +350,7 @@ div.ui-datepicker{margin:0}
 .accordion__item{margin-bottom:1em}
 .accordion__item__heading{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-moz-box-align:center;-ms-flex-align:center;align-items:center;position:relative;cursor:pointer;padding:1em 2em;color:#fff;background-color:#0047ab;margin-bottom:0}
 .accordion__item__content{padding:1em 2em;border:solid #0047ab;border-width:0 1px 1px 1px}
+.not-found{text-align:center;margin-bottom:11.25rem}
 .woocommerce-message a:not(.button),.woocommerce-error a:not(.button),.woocommerce-info a:not(.button){text-decoration:underline}
 .shop_table{border:1px solid #ccc}
 .woocommerce-products-subheader{margin-bottom:5rem}
