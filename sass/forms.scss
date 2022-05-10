@@ -57,7 +57,7 @@
 			border-radius: 0;
 		}
 	}
-// Gravity Forms
+// Gravity Forms - General
 	.gfield_required {
 		display: inline-block;
 		margin-left: 0.25rem;
@@ -72,6 +72,9 @@
 		width: 100%;
 		padding-left: $space-s;
 		padding-bottom: $space-s;
+	}
+	fieldset.gfield label {
+		font-weight: 400;
 	}
 	.gfield_label {
 		display: block;
@@ -110,6 +113,7 @@
 		width: 25%;
 	}
 	@include phone {
+		.gfield--width-half,
 		.gf_left_half,
 		.gf_right_half,
 		.gf_left_third,
@@ -237,7 +241,7 @@
 			margin-top: -5px;
 			background-color: $color-white;
 		}
-// Inline List
+// Gravity Forms - Inline List
 	.gf_list_inline {
 		display: flex;
 		flex-wrap: wrap;
@@ -302,25 +306,60 @@
 		color: $color-default;
 		opacity: 1;
 	}
-// Search Form
-	.form--search {
-		display: flex;
-		position: relative;
-		input {
-			padding-right: 4em;
+// Gravity Forms - Address Field
+	.ginput_container_address {
+		flex-wrap: wrap;
+		max-width: 900px;
+		align-items: flex-start;
+		.ginput_full {
+			width: 100%;
 		}
-		button {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			right: 1em;
-			color: $color-primary;
+		.ginput_left {
+			width: 50%;
+			padding-right: 2em;
 		}
-		button:hover {
-			background-color: transparent;
+		.ginput_right {
+			width: 50%;
+		}
+		& > span {
+			margin-bottom: $space-xs;
+		}
+		@include phone {
+			.ginput_left {
+				width: 100%;
+				padding-right: 0;
+			}
+			.ginput_right {
+				width: 100%;
+			}
 		}
 	}
-// File upload
+// Gravity Forms - Name Field
+	.ginput_container_name {
+		.name_first,
+		.name_last {
+			width: 50%;
+		}
+		.name_first {
+			padding-right: $space-xs;
+		}
+		.name_last {
+			padding-left: $space-xs;
+		}
+		@include phone {
+			&.ginput_complex {
+				flex-direction: column;
+			}
+			.name_first,
+			.name_last {
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+				margin-bottom: $space-xs;
+			}
+		}
+	}
+// Gravity Forms - File upload
 	.ginput_container_fileupload {
 		border: 2px dashed;
 		padding: $space-m;
@@ -333,14 +372,14 @@
 	.gform_fileupload_rules {
 		display: block;
 	}
-// List field
+// Gravity Forms - List field
 	.gfield_list_group_item {
 		margin-bottom: 1em;
 	}
 	.gfield_list_group + .gfield_list_group {
 		margin-top: 2em;
 	}
-// Time field
+// Gravity Forms - Time field
 	.ginput_complex {
 		display: flex;
 		flex-direction: row;
@@ -353,3 +392,21 @@
 			margin-left: .5em;
 		}
 	}
+// Search Form
+		.form--search {
+			display: flex;
+			position: relative;
+			input {
+				padding-right: 4em;
+			}
+			button {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 1em;
+				color: $color-primary;
+			}
+			button:hover {
+				background-color: transparent;
+			}
+		}

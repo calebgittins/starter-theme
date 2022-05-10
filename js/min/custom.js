@@ -118,7 +118,7 @@
 	});
 // Gravity Forms
 	$(document).bind('gform_post_render', function() {
-		selectricGforms();
+		initSelectric();
 	});
 // WooCommerce
 	function customWooFields() {
