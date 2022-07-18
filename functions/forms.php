@@ -29,12 +29,6 @@
 
 		    return $dom->saveHtml( $new_button );
 		}
-	// Load datepicker style
-		add_action( 'gform_enqueue_scripts', 'enqueue_custom_script' );
-		function enqueue_custom_script() {
-			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
-			wp_enqueue_style( 'gforms_datepicker_css', GFCommon::get_base_url() . "/css/datepicker{$min}.css", null, GFCommon::$version );
-		}
 	// Update spinner image
 		function gf_spinner_replace( $image_src, $form ) {
 			return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; 
