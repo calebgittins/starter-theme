@@ -1,23 +1,39 @@
 // Accordion
-	.accordion__item {
-		margin-bottom: 1em;
-	}
-	.accordion__item__heading {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-		cursor: pointer;
-		padding: 1em 2em;
-		color: $color-white;
-		background-color: $color-primary;
-		margin-bottom: 0;
-	}
-	.accordion__item__content {
-		padding: 1em 2em;
-		border: solid $color-primary;
-		border-width: 0 1px 1px 1px;
-	}
+
+    .accordion__header {
+    	display: block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        padding: 1em 3em 1em 1em;
+        background-color: transparent;
+        border-bottom: 1px solid $color-default;
+
+        &:after {
+            position: absolute;
+            right: 1em;
+            top: 1em;
+        }
+    }
+    .accordion__item[aria-hidden=true] {
+      display: none;
+    }
+    .accordion__item[aria-hidden=false] {
+      display: block;
+    }
+
+    /* title opened */
+    .accordion__header[aria-expanded="true"]:after {
+      content: " - ";
+    }
+    /* title closed */
+    .accordion__header[aria-expanded="false"]:after {
+      content: " + ";
+    }
+
+    .accordion__item__content {
+    	padding: 1em;
+    }
 
 // Not Found
 

@@ -1,3 +1,252 @@
+/*
+ * jQuery Accessible Accordion system, using ARIA
+ * @version v2.6.1
+ * Website: https://a11y.nicolas-hoffmann.net/accordion/
+ * License MIT: https://github.com/nico3333fr/jquery-accessible-accordion-aria/blob/master/LICENSE
+ */
+(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (typeof exports !== 'undefined') {
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(window.jQuery);
+    }
+}(function($) {
+    'use strict';
+
+    var defaultConfig = {
+        headersSelector: '.js-accordion__header',
+        panelsSelector: '.js-accordion__panel',
+        buttonsSelector: 'button.js-accordion__header',
+        buttonsGeneratedContent: 'text',
+        button: $('<button></button>', {
+            class: 'js-accordion__header',
+            type: 'button'
+        }),
+        buttonSuffixId: '_tab',
+        multiselectable: true,
+        prefixClass: 'accordion',
+        headerSuffixClass: '__title',
+        buttonSuffixClass: '__header',
+        panelSuffixClass: '__panel',
+        direction: 'ltr',
+        accordionPrefixId: 'accordion'
+    };
+
+    var Accordion = function($el, options) {
+        this.options = $.extend({}, defaultConfig, options);
+
+        this.$wrapper = $el;
+        this.$panels = $(this.options.panelsSelector, this.$wrapper);
+
+        this.initAttributes();
+        this.initEvents();
+    };
+
+    Accordion.prototype.initAttributes = function() {
+        this.$wrapper.attr({
+            'role': 'tablist',
+            'aria-multiselectable': this.options.multiselectable.toString()
+        }).addClass(this.options.prefixClass);
+
+        // id generated if not present
+        if (!this.$wrapper.attr('id')) {
+            var index_lisible = Math.random().toString(32).slice(2, 12);
+            this.$wrapper.attr('id', this.options.accordionPrefixId + '-' + index_lisible);
+        }
+
+        this.$panels.each($.proxy(function(index, el) {
+            var $panel = $(el);
+            var $header = $(this.options.headersSelector, $panel);
+            var $button = this.options.buttonsGeneratedContent === 'html' ? this.options.button.clone().html($header.html()) : this.options.button.clone().text($header.text());
+
+            $header.addClass(this.options.prefixClass + this.options.headerSuffixClass);
+            $panel.before($button);
+
+            var panelId = $panel.attr('id') || this.$wrapper.attr('id') + '-' + index;
+            var buttonId = panelId + this.options.buttonSuffixId;
+
+            $button.attr({
+                'aria-controls': panelId,
+                'aria-expanded': 'false',
+                'role': 'tab',
+                'id': buttonId,
+                'aria-selected': 'false'
+            }).addClass(this.options.prefixClass + this.options.buttonSuffixClass);
+
+            $panel.attr({
+                'aria-labelledby': buttonId,
+                'role': 'tabpanel',
+                'id': panelId,
+                'aria-hidden': 'true'
+            }).addClass(this.options.prefixClass + this.options.panelSuffixClass);
+
+            // if opened by default
+            if ($panel.attr('data-accordion-opened') === 'true') {
+                $button.attr({
+                    'aria-expanded': 'true',
+                    'data-accordion-opened': null
+                });
+
+                $panel.attr({
+                    'aria-hidden': 'false'
+                });
+            }
+
+
+        }, this));
+
+        this.$buttons = $(this.options.buttonsSelector, this.$wrapper);
+    };
+
+    Accordion.prototype.initEvents = function() {
+        this.$wrapper.on('focus', this.options.buttonsSelector, $.proxy(this.focusButtonEventHandler, this));
+
+        this.$wrapper.on('click', this.options.buttonsSelector, $.proxy(this.clickButtonEventHandler, this));
+
+        this.$wrapper.on('keydown', this.options.buttonsSelector, $.proxy(this.keydownButtonEventHandler, this));
+    };
+
+    Accordion.prototype.focusButtonEventHandler = function(e) {
+        var $target = $(e.target);
+        var $button = $target.is('button') ? $target : $target.closest('button');
+
+        $(this.options.buttonsSelector, this.$wrapper).attr({
+            'aria-selected': 'false'
+        });
+
+        $button.attr({
+            'aria-selected': 'true'
+        });
+    };
+
+    Accordion.prototype.clickButtonEventHandler = function(e) {
+        var $target = $(e.target);
+        var $button = $target.is('button') ? $target : $target.closest('button');
+        var $panel = $('#' + $button.attr('aria-controls'));
+
+        this.$buttons.attr('aria-selected', 'false');
+        $button.attr('aria-selected', 'true');
+
+        // opened or closed?
+        if ($button.attr('aria-expanded') === 'false') { // closed
+            $button.attr('aria-expanded', 'true');
+            $panel.attr('aria-hidden', 'false');
+        } else { // opened
+            $button.attr('aria-expanded', 'false');
+            $panel.attr('aria-hidden', 'true');
+        }
+
+        if (this.options.multiselectable === false) {
+            this.$panels.not($panel).attr('aria-hidden', 'true');
+            this.$buttons.not($button).attr('aria-expanded', 'false');
+        }
+
+        setTimeout(function() {
+            $button.focus();
+        }, 0);
+
+        e.stopPropagation();
+        e.preventDefault();
+    };
+
+    Accordion.prototype.keydownButtonEventHandler = function(e) {
+        var $target = $(e.target);
+        var $button = $target.is('button') ? $target : $target.closest('button');
+        var $firstButton = this.$buttons.first();
+        var $lastButton = this.$buttons.last();
+        var index = this.$buttons.index($button);
+
+        $target = null;
+
+        var k = this.options.direction === 'ltr' ? {
+            prev: [38, 37], // up & left
+            next: [40, 39], // down & right
+            first: 36, // home
+            last: 35 // end
+        } : {
+            prev: [38, 39], // up & left
+            next: [40, 37], // down & right
+            first: 36, // home
+            last: 35 // end
+        };
+
+        var allKeyCode = [].concat(k.prev, k.next, k.first, k.last);
+
+        if ($.inArray(e.keyCode, allKeyCode) >= 0 && !e.ctrlKey) {
+            this.$buttons.attr({
+                'aria-selected': 'false'
+            });
+
+
+            if (e.keyCode === 36) {
+                $target = $firstButton;
+            }
+            // strike end in the tab => last tab
+            else if (e.keyCode === 35) {
+                $target = $lastButton;
+            }
+            // strike up or left in the tab => previous tab
+            else if ($.inArray(e.keyCode, k.prev) >= 0) {
+                // if we are on first one, activate last
+                $target = $button.is($firstButton) ? $lastButton : this.$buttons.eq(index - 1);
+            }
+            // strike down or right in the tab => next tab
+            else if ($.inArray(e.keyCode, k.next) >= 0) {
+                // if we are on last one, activate first
+                $target = $button.is($lastButton) ? $firstButton : this.$buttons.eq(index + 1);
+            }
+
+            if ($target !== null) {
+                this.goToHeader($target);
+            }
+
+            e.preventDefault();
+        }
+    };
+
+    Accordion.prototype.goToHeader = function($target) {
+        if ($target.length !== 1) {
+            return;
+        }
+
+        $target.attr({
+            'aria-selected': 'true'
+        });
+
+        setTimeout(function() {
+            $target.focus();
+        }, 0);
+    };
+
+
+    var PLUGIN = 'accordion';
+
+    $.fn[PLUGIN] = function(params) {
+        var options = $.extend({}, $.fn[PLUGIN].defaults, params);
+
+
+        return this.each(function() {
+            var $el = $(this);
+
+            var specificOptions = {
+                multiselectable: $el.attr('data-accordion-multiselectable') === 'none' ? false : options.multiselectable,
+                prefixClass: typeof($el.attr('data-accordion-prefix-classes')) !== 'undefined' ? $el.attr('data-accordion-prefix-classes') : options.prefixClass,
+                buttonsGeneratedContent: typeof($el.attr('data-accordion-button-generated-content')) !== 'undefined' ? $el.attr('data-accordion-button-generated-content') : options.buttonsGeneratedContent,
+                direction: $el.closest('[dir="rtl"]').length > 0 ? 'rtl' : options.direction
+            };
+            specificOptions = $.extend({}, options, specificOptions);
+
+            $el.data[PLUGIN] = new Accordion($el, specificOptions);
+        });
+    };
+
+    $.fn[PLUGIN].defaults = defaultConfig;
+
+}));
+
 /*!
   hey, [be]Lazy.js - v1.8.2 - 2016.10.25
   A fast, small and dependency free lazy load script (https://github.com/dinbror/blazy)
@@ -1521,351 +1770,6 @@
     }
   };
 }));
-
-/**
- * @preserve
- * Sharer.js
- *
- * @description Create your own social share buttons
- * @version 0.3.2
- * @author Ellison Leao <ellisonleao@gmail.com>
- * @license GPLv3
- *
- */
-
-(function (window, document) {
-    'use strict';
-    /**
-     * @constructor
-     */
-    var Sharer = function(elem) {
-        this.elem = elem;
-    };
-
-    /**
-     *  @function init
-     *  @description bind the events for multiple sharer elements
-     *  @returns {Empty}
-     */
-    Sharer.init = function() {
-        var elems = document.querySelectorAll('.sharer'),
-            i,
-            l = elems.length;
-
-        for (i = 0; i < l ; i++) {
-            elems[i].addEventListener('click', Sharer.add);
-        }
-    };
-
-    /**
-     *  @function add
-     *  @description bind the share event for a single dom element
-     *  @returns {Empty}
-     */
-    Sharer.add = function(elem) {
-        var target = elem.currentTarget || elem.srcElement;
-        var sharer = new Sharer(target);
-        sharer.share();
-    };
-
-    // instance methods
-    Sharer.prototype = {
-        constructor: Sharer,
-        /**
-         *  @function getValue
-         *  @description Helper to get the attribute of a DOM element
-         *  @param {String} attr DOM element attribute
-         *  @param {String} defaultValue value to use for attr
-         *  @returns {String|Empty} returns the attr value or empty string
-         */
-        getValue: function(attr, defaultValue) {
-            defaultValue = (defaultValue === undefined) ? '' : defaultValue;
-            var val = this.elem.getAttribute('data-' + attr);
-            return (val === undefined || val === null) ? defaultValue : val;
-        },
-
-        /**
-         * @event share
-         * @description Main share event. Will pop a window or redirect to a link
-         * based on the data-sharer attribute.
-         */
-        share: function() {
-            var sharer = this.getValue('sharer').toLowerCase(),
-                sharers = {
-                    facebook: {
-                        shareUrl: 'https://www.facebook.com/sharer/sharer.php',
-                        params: {u: this.getValue('url')}
-                    },
-                    googleplus: {
-                        shareUrl: 'https://plus.google.com/share',
-                        params: {url: this.getValue('url')}
-                    },
-                    linkedin: {
-                        shareUrl: 'https://www.linkedin.com/shareArticle',
-                        params: {
-                            url: this.getValue('url'),
-                            mini: true
-                        }
-                    },
-                    twitter: {
-                        shareUrl: 'https://twitter.com/intent/tweet/',
-                        params: {
-                            text: this.getValue('title'),
-                            url: this.getValue('url'),
-                            hashtags: this.getValue('hashtags'),
-                            via: this.getValue('via')
-                        }
-                    },
-                    email: {
-                        shareUrl: 'mailto:' + this.getValue('to'),
-                        params: {
-                            subject: this.getValue('subject'),
-                            body: this.getValue('title') + '\n' + this.getValue('url')
-                        },
-                        isLink: true
-                    },
-                    whatsapp: {
-                        shareUrl: 'whatsapp://send',
-                        params: {
-                            text: this.getValue('title') + ' ' + this.getValue('url')
-                        },
-                        isLink: true
-                    },
-                    telegram: {
-                        shareUrl: 'tg://msg_url',
-                        params: {
-                            text: this.getValue('title') + ' ' + this.getValue('url')
-                        },
-                        isLink: true
-                    },
-                    viber: {
-                        shareUrl: 'viber://forward',
-                        params: {
-                            text: this.getValue('title') + ' ' + this.getValue('url')
-                        },
-                        isLink: true
-                    },
-                    line: {
-                        shareUrl: 'http://line.me/R/msg/text/?' + encodeURIComponent(this.getValue('title') + ' ' + this.getValue('url')),
-                        isLink: true
-                    },
-                    pinterest: {
-                        shareUrl: 'https://www.pinterest.com/pin/create/button/',
-                        params: {
-                            url: this.getValue('url'),
-                            media: this.getValue('image'),
-                            description: this.getValue('description')
-                        }
-                    },
-                    tumblr: {
-                        shareUrl: 'http://tumblr.com/widgets/share/tool',
-                        params: {
-                            canonicalUrl: this.getValue('url'),
-                            content: this.getValue('url'),
-                            posttype: 'link',
-                            title: this.getValue('title'),
-                            caption: this.getValue('caption'),
-                            tags: this.getValue('tags')
-                        }
-                    },
-                    hackernews: {
-                        shareUrl: 'https://news.ycombinator.com/submitlink',
-                        params: {
-                            u: this.getValue('url'),
-                            t: this.getValue('title')
-                        }
-                    },
-                    reddit: {
-                        shareUrl: 'https://www.reddit.com/submit',
-                        params: {'url': this.getValue('url')}
-                    },
-                    vk: {
-                        shareUrl: 'http://vk.com/share.php',
-                        params: {
-                            url: this.getValue('url'),
-                            title: this.getValue('title'),
-                            description: this.getValue('caption'),
-                            image: this.getValue('image')
-                        }
-                    },
-                    xing: {
-                        shareUrl: 'https://www.xing.com/app/user',
-                        params: {
-                            'op': 'share',
-                            'url': this.getValue('url'),
-                            'title': this.getValue('title')
-                        }
-                    },
-                    buffer: {
-                        shareUrl: 'https://buffer.com/add',
-                        params: {
-                            url: this.getValue('url'),
-                            title: this.getValue('title'),
-                            via: this.getValue('via'),
-                            picture: this.getValue('picture')
-                        }
-                    },
-                    instapaper: {
-                        shareUrl: 'http://www.instapaper.com/edit',
-                        params: {
-                            url: this.getValue('url'),
-                            title: this.getValue('title'),
-                            description: this.getValue('description')
-                        }
-                    },
-                    pocket: {
-                        shareUrl: 'https://getpocket.com/save',
-                        params: {
-                            url: this.getValue('url')
-                        }
-                    },
-                    digg: {
-                        shareUrl: 'http://www.digg.com/submit',
-                        params: {
-                            url: this.getValue('url')
-                        }
-                    },
-                    stumbleupon: {
-                        shareUrl: 'http://www.stumbleupon.com/submit',
-                        params: {
-                            url: this.getValue('url'),
-                            title: this.getValue('title')
-                        }
-                    },
-                    flipboard: {
-                        shareUrl: 'https://share.flipboard.com/bookmarklet/popout',
-                        params: {
-                            v: 2,
-                            title: this.getValue('title'),
-                            url: this.getValue('url'),
-                            t: Date.now()
-                        }
-                    },
-                    weibo: {
-                        shareUrl: 'http://service.weibo.com/share/share.php',
-                        params: {
-                            url: this.getValue('url'),
-                            title: this.getValue('title'),
-                            pic: this.getValue('image'),
-                            appkey: this.getValue('appkey'),
-                            ralateUid: this.getValue('ralateuid'),
-                            language: 'zh_cn'
-                        }
-                    },
-                    renren: {
-                        shareUrl: 'http://share.renren.com/share/buttonshare',
-                        params: {
-                            link: this.getValue('url')
-                        }
-                    },
-                    myspace: {
-                        shareUrl: 'https://myspace.com/post',
-                        params: {
-                            u: this.getValue('url'),
-                            t: this.getValue('title'),
-                            c: this.getValue('description')
-                        }
-                    },
-                    blogger: {
-                        shareUrl: 'https://www.blogger.com/blog-this.g',
-                        params: {
-                            u: this.getValue('url'),
-                            n: this.getValue('title'),
-                            t: this.getValue('description')
-                        }
-                    },
-                    baidu: {
-                        shareUrl: 'http://cang.baidu.com/do/add',
-                        params: {
-                            it: this.getValue('title'),
-                            iu: this.getValue('url')
-                        }
-                    },
-                    douban: {
-                        shareUrl: 'https://www.douban.com/share/service',
-                        params: {
-                            name: this.getValue('title'),
-                            href: this.getValue('url'),
-                            image: this.getValue('image')
-                        }
-                    },
-                    okru: {
-                        shareUrl: 'https://connect.ok.ru/dk',
-                        params: {
-                            'st.cmd': 'WidgetSharePreview',
-                            'st.shareUrl': this.getValue('url'),
-                            'title': this.getValue('title')
-                        }
-                    },
-                    mailru: {
-                        shareUrl: 'http://connect.mail.ru/share',
-                        params: {
-                            'share_url': this.getValue('url'),
-                            'linkname': this.getValue('title'),
-                            'linknote': this.getValue('description'),
-                            'type': 'page'
-                        }
-                    }
-                },
-                s = sharers[sharer];
-
-            // custom popups sizes
-            if (s) {
-                s.width = this.getValue('width');
-                s.height = this.getValue('height');
-            }
-            return s !== undefined ? this.urlSharer(s) : false;
-        },
-        /**
-         * @event urlSharer
-         * @param {Object} sharer
-         */
-        urlSharer: function(sharer) {
-            var p = sharer.params || {},
-                keys = Object.keys(p),
-                i,
-                str = keys.length > 0 ? '?' : '';
-            for (i = 0; i < keys.length; i++) {
-                if (str !== '?') {
-                    str += '&';
-                }
-                if (p[keys[i]]) {
-                    str += keys[i] + '=' + encodeURIComponent(p[keys[i]]);
-                }
-            }
-            sharer.shareUrl += str;
-
-            if (!sharer.isLink) {
-                var popWidth = sharer.width || 600,
-                    popHeight = sharer.height || 480,
-                    left = window.innerWidth / 2 - popWidth / 2 + window.screenX,
-                    top = window.innerHeight / 2 - popHeight / 2 + window.screenY,
-                    popParams = 'scrollbars=no, width=' + popWidth + ', height=' + popHeight + ', top=' + top + ', left=' + left,
-                    newWindow = window.open(sharer.shareUrl, '', popParams);
-
-                if (window.focus) {
-                    newWindow.focus();
-                }
-            } else {
-                window.location.href = sharer.shareUrl;
-            }
-        }
-    };
-
-    // adding sharer events on domcontentload
-    if (document.readyState === 'complete' || document.readyState !== 'loading') {
-        Sharer.init();
-    } else {
-        document.addEventListener('DOMContentLoaded', Sharer.init);
-    }
-
-    // turbolinks compatibility
-    window.addEventListener('page:load', Sharer.init);
-
-    // exporting sharer for external usage
-    window.Sharer = Sharer;
-
-})(window, document);
 
 /*
      _ _      _       _

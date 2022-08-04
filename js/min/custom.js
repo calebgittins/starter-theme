@@ -89,22 +89,24 @@
 // Equal Heights
 	$('.js-match-height').matchHeight();
 // Accordion
-	$('.accordion__item__content').hide(); // Close all accordions
-	$('.js-accordion-toggle').click(function(e) {
-		e.preventDefault();
-		var accordion_id = $(this).data('target');
-		if ($(this).parent().hasClass('accordion__item--active')) { // If the accordion is already open
-			$('.accordion__item').removeClass('accordion__item--active');
-			$('.accordion__item__content').slideUp();
-			$(this).parent().removeClass('accordion__item--active');
-			$('#' + accordion_id).slideUp();
-		} else { // Else if the accordion is not open
-			$('.accordion__item').removeClass('accordion__item--active');
-			$('.accordion__item__content').slideUp();
-			$(this).parent().addClass('accordion__item--active');
-			$('#' + accordion_id).slideDown();
-		}
-	});
+	// $('.accordion__item__content').hide(); // Close all accordions
+	// $('.js-accordion-toggle').click(function(e) {
+	// 	e.preventDefault();
+	// 	var accordion_id = $(this).data('target');
+	// 	if ($(this).parent().hasClass('accordion__item--active')) { // If the accordion is already open
+	// 		$('.accordion__item').removeClass('accordion__item--active');
+	// 		$('.accordion__item__content').slideUp();
+	// 		$(this).parent().removeClass('accordion__item--active');
+	// 		$('#' + accordion_id).slideUp();
+	// 	} else { // Else if the accordion is not open
+	// 		$('.accordion__item').removeClass('accordion__item--active');
+	// 		$('.accordion__item__content').slideUp();
+	// 		$(this).parent().addClass('accordion__item--active');
+	// 		$('#' + accordion_id).slideDown();
+	// 	}
+	// });
+// Accordion
+	$('.js-accordion').accordion();
 // Responsive videos
 	$('.js-fitvids').fitVids();
 // Lazy Loading images

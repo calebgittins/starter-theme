@@ -287,6 +287,31 @@ div.ui-datepicker{margin:0}
 .ginput_container_date,.custom-datepicker{position:relative}
 .ginput_container_date:before,.custom-datepicker:before{position:absolute;z-index:1;right:1em;content:'\f133';top:50%;transform:translateY(-50%);font-family:"Font Awesome 5 Pro";color:#0047ab}
 .ginput_container_date input,.custom-datepicker input{position:relative;z-index:5;background-color:transparent}
+.gform-theme-datepicker:not(.gform-legacy-datepicker){background:#0047ab;border:1px solid #313131;color:#313131;margin-top:5px;padding:18px 15px;width:auto}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) table,.gform-theme-datepicker:not(.gform-legacy-datepicker) td,.gform-theme-datepicker:not(.gform-legacy-datepicker) th,.gform-theme-datepicker:not(.gform-legacy-datepicker) thead,.gform-theme-datepicker:not(.gform-legacy-datepicker) tr{background:0;border:0;margin:0}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) td,.gform-theme-datepicker:not(.gform-legacy-datepicker) th{padding:5px;text-shadow:none;text-transform:none}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header{border:0;display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 0 5px;padding:0;position:relative;width:100%}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev{-moz-box-align:center;-ms-flex-align:center;align-items:center;background:0;border:0;color:#313131;cursor:pointer;display:-moz-box;display:-ms-flexbox;display:flex;font-family:gform-icons-theme !important;font-size:24px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;height:30px;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;line-height:1;position:absolute;speak:never;text-decoration:none;top:-2px;transition:color .3s ease-in-out,background-color .3s ease-in-out,border-color .3s ease-in-out;width:30px}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next:focus,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next:hover,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev:focus,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev:hover{color:#313131}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next .ui-icon,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev .ui-icon{display:none}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next::before,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev::before{border:0;height:auto;position:static;transform:none;width:auto}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev{left:0}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-prev::before{content:"\f104"}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next{right:0}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header .ui-datepicker-next::before{content:"\f105"}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header select{-webkit-appearance:none;background-color:transparent;background-image:url(images/gforms/down-arrow.svg);background-position:100% 50%;background-repeat:no-repeat;background-size:24px 24px;border:0;border-radius:0;box-shadow:none;color:#313131;cursor:pointer;display:inline-block;font-size:.875rem;font-weight:500;height:auto;min-height:0;padding:0 22px 0 0;width:auto}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-header select.ui-datepicker-month{margin-right:20px;-moz-text-align-last:right;text-align-last:right}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar a,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar span{font-weight:400}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar th span{-moz-box-align:center;-ms-flex-align:center;align-items:center;color:#313131;display:-moz-box;display:-ms-flexbox;display:flex;font-size:.8125rem;font-weight:500;height:40px;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;width:40px}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar td{font-size:.8125rem;height:50px;width:50px}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-default{-moz-box-align:center;-ms-flex-align:center;align-items:center;background:0;border:1px solid transparent;border-radius:100%;box-shadow:none;color:#313131;display:-moz-box;display:-ms-flexbox;display:flex;height:40px;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;text-decoration:none;transition:color .3s ease-in-out,background-color .3s ease-in-out,border-color .3s ease-in-out;width:40px}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-default:focus,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-default:hover{background:0;border-color:#fff;outline:0}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-default:active{background:#f2f3f5;border-color:#5abc72}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-default{background:#5abc72;border-color:#5abc72;box-shadow:0 .125rem .125rem rgba(58,58,87,0.0596411);color:#fff}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-default:focus,.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-default:hover{border-color:#5abc72}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-disabled{background:0}
+.gform-theme-datepicker:not(.gform-legacy-datepicker) .ui-datepicker-calendar .ui-state-disabled .ui-state-default{-moz-box-align:center;-ms-flex-align:center;align-items:center;background:#f2f3f5;border:1px solid rgba(32,32,46,0.079);border-radius:100%;box-shadow:0 .125rem .125rem rgba(58,58,87,0.0596411);color:#0047ab;cursor:text;display:-moz-box;display:-ms-flexbox;display:flex;height:40px;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;text-decoration:none;width:40px}
+html[dir=rtl] #ui-datepicker-div.gform-theme-datepicker[style]{right:auto !important}
 .gfield_error input,.gfield_error select,.gfield_error textarea{border:1px solid #df0000}
 .gfield_error .validation_message{color:#df0000;margin-top:.5em}
 .gform_confirmation_message{display:block}
@@ -356,9 +381,13 @@ div.ui-datepicker{margin:0}
 .default-spinner--dark{border-left:2px solid rgba(0,0,0,0.15);border-right:2px solid rgba(0,0,0,0.15);border-bottom:2px solid rgba(0,0,0,0.15);border-top:2px solid rgba(0,0,0,0.8)}
 .default-spinner--medium{width:48px;height:48px;margin-top:-24px;margin-left:-24px}
 .default-spinner--small{width:24px;height:24px;margin-top:-12px;margin-left:-12px}
-.accordion__item{margin-bottom:1em}
-.accordion__item__heading{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-moz-box-align:center;-ms-flex-align:center;align-items:center;position:relative;cursor:pointer;padding:1em 2em;color:#fff;background-color:#0047ab;margin-bottom:0}
-.accordion__item__content{padding:1em 2em;border:solid #0047ab;border-width:0 1px 1px 1px}
+.accordion__header{display:block;width:100%;text-align:left;position:relative;padding:1em 3em 1em 1em;background-color:transparent;border-bottom:1px solid #313131}
+.accordion__header:after{position:absolute;right:1em;top:1em}
+.accordion__item[aria-hidden=true]{display:none}
+.accordion__item[aria-hidden=false]{display:block}
+.accordion__header[aria-expanded="true"]:after{content:" - "}
+.accordion__header[aria-expanded="false"]:after{content:" + "}
+.accordion__item__content{padding:1em}
 .not-found{text-align:center;margin-bottom:11.25rem}
 .woocommerce-message a:not(.button),.woocommerce-error a:not(.button),.woocommerce-info a:not(.button){text-decoration:underline}
 .shop_table{border:1px solid #ccc}

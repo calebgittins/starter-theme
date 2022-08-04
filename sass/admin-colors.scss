@@ -15,3 +15,24 @@ $highlight-color: $color-primary;
 		color: $color-white;
 	}
 }
+
+// ACF Flexible Layouts
+
+	body .acf-fc-popup ul li {
+	    width: calc(100% / 4);
+	}
+
+	body .acf-fc-popup ul li a {
+	    box-shadow: none;
+	}
+
+	body .acf-fc-popup ul li a .acf-fc-popup-label {
+	    background-color: $color-primary;
+	    text-shadow: none;
+	    border: none;
+	    box-shadow: none;
+	}
+
+	body .acf-fc-popup ul li a .acf-fc-popup-image {
+	    padding-bottom: 56%;
+	}
