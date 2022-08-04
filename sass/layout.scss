@@ -41,3 +41,32 @@
 		text-align: center;
 		margin-bottom: $space-xl;
 	}
+
+// Contact
+
+	@include min-width(1200px) {
+		
+		.contact {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.contact__content {
+			width: 40%;
+		}
+
+		.contact__form {
+			width: 60%;
+			padding-left: $space-l;
+		}
+	
+	}
+
+	@include tablet {
+		
+		.contact__content {
+			margin-bottom: $space-m;
+		}
+	
+	}

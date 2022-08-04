@@ -499,6 +499,9 @@ body .thwmsc-tab-panel{padding:5rem 2.5rem}
 .woocommerce-billing-fields__field-wrapper .form-row-first,.woocommerce-billing-fields__field-wrapper .form-row-last,.woocommerce-shipping-fields__field-wrapper .form-row-first,.woocommerce-shipping-fields__field-wrapper .form-row-last{width:50%}
 .woocommerce-billing-fields__field-wrapper .form-row-third,.woocommerce-shipping-fields__field-wrapper .form-row-third{width:33.333%}
 }@media handheld,only screen and (min-width:1200px){.hamburger{display:none}
+.contact{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-moz-box-align:start;-ms-flex-align:start;align-items:flex-start}
+.contact__content{width:40%}
+.contact__form{width:60%;padding-left:7.5rem}
 .product{display:-moz-box;display:-ms-flexbox;display:flex;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-moz-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .product__media{width:50%}
 .product__content{width:50%;padding-left:5rem}
@@ -510,6 +513,7 @@ body .thwmsc-tab-panel{padding:5rem 2.5rem}
 .slick-arrow--next{right:48px}
 .header__nav{display:none}
 input,form select,textarea,button{-webkit-appearance:none;border-radius:0}
+.contact__content{margin-bottom:5rem}
 .columns-3 .grid__item,.columns-3 .u-columns .col-1,.u-columns .columns-3 .col-1,.columns-3 .u-columns .col-2,.u-columns .columns-3 .col-2,.columns-4 .grid__item,.columns-4 .u-columns .col-1,.u-columns .columns-4 .col-1,.columns-4 .u-columns .col-2,.u-columns .columns-4 .col-2{width:50%}
 .cart__actions .coupon{margin-bottom:2.5rem}
 .cart-collaterals .woocommerce-shipping-methods{margin-left:6.25rem}
