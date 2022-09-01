@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <div class="wrap">
-	
+
 	<?php if(have_posts()) : ?>
 
 		<h1>Search results for <?php echo esc_html(stripslashes_deep(get_search_query())); ?></h1>
-			
+
 		<?php if (function_exists('wp_searchheader')) : ?>
 			<div class="wysiwyg">
 				<?php wp_searchheader()?>
@@ -17,17 +17,18 @@
 			<?php while(have_posts()) : the_post(); ?>
 			<?php
 				$title     = get_the_title();
+				$title     = html_entity_decode($title);
 				$keys      = explode(" ",$s);
 				$title     = preg_replace('/('.implode('|', $keys) .')/iu', '<strong class="search-excerpt">\0</strong>', $title);
 				$excerpt   = get_the_excerpt();
 				$permalink = get_permalink();
 				// Flexible content
-				if( have_rows('td_page_content') ): while ( have_rows('td_page_content') ) : the_row(); 
+				if( have_rows('td_page_content') ): while ( have_rows('td_page_content') ) : the_row();
 					if(get_sub_field('content')):
 						$excerpt .= get_sub_field('content');
 					endif;
-		    	endwhile; endif; 
-		    	// Home page 
+		    	endwhile; endif;
+		    	// Home page
 		    	if(get_the_ID() == get_option('page_on_front')) {
 		    		// Get the meta description since there's not usually suitable text on page
 		    		$excerpt .= get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
@@ -47,9 +48,9 @@
 			</li>
 			<?php endwhile; ?>
 			</ol>
-		</div>	
+		</div>
 
-		<div class="nav--pagination">			
+		<div class="nav--pagination">
 			<?php
 				global $wp_query;
 				$big = 999999999;
@@ -64,9 +65,9 @@
 				) );
 			?>
 		</div>
-	    
+
     <?php else:  ?>
-	    
+
 	    <p>No results found.</p>
 
 	<?php endif; ?>
